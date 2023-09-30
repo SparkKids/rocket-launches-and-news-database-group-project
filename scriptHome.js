@@ -13,3 +13,18 @@ options.addEventListener('click', (e) => {
         } else { hiddenOption.classList.add('hidden')}
     }
 })
+
+var btn = document.getElementById('search-btn')
+var type = document.getElementById('hiddenInput')
+var keyword = document.getElementById('keywordInput')
+
+btn.addEventListener('click', (e)=>{
+    e.preventDefault()
+
+    var typeVal = type.value
+    var keywordVal = keyword.value
+
+    var link = './search.html?t=' + typeVal +
+    '&k=' + keywordVal
+    location.href = link
+})

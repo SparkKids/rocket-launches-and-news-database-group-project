@@ -148,7 +148,10 @@
               <form>
                 <!-- First last name -->
                 <div class="grid md:grid-cols-1 md:gap-6 mb-10">
-                  <h1 class="text-5xl text-center">Search Options</h1>
+                  <h1 class="text-5xl text-center"> Search Options </h1>
+                </div>
+                <div class="flex justify-start md:grid-cols-1 md:gap-6 mb-4">
+                  <h1 class="text-2xl text-center"> Select Type: </h1>
                 </div>
                 <div class="relative mb-8 flex flex-row" data-te-input-wrapper-init>
                   <!-- email -->
@@ -162,10 +165,10 @@
                   </select>
 
                   <div id="hidden-option" class="relative hidden left-10 outline-1 border-0 bg-transparent px-3 leading-[1.6] " data-te-input-wrapper-init>
-                  <input type="password"
+                  <input type="text"
                     class="mb-3 block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
-                    id="exampleFormControlInput4" placeholder="-ie Falcon 9 Block 5" />
-                  <label for="exampleFormControlInput4"
+                    id="hiddenInput" placeholder="-ie Falcon 9 Block 5" />
+                  <label for="hiddenInput"
                     class="relative bottom-[4.5rem] left-0 max-w-[90%] text-neutral-500">rocket name: 
                   </label>
                 </div>
@@ -175,8 +178,8 @@
                   <!-- password -->
                   <input type="text"
                     class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    id="exampleFormControlInput4" placeholder="Password" />
-                  <label for="exampleFormControlInput4"
+                    id="keywordInput" placeholder="Password" />
+                  <label for="keywordInput"
                     class="p-2 absolute bottom-10 left-0 max-w-[90%] text-neutral-500">Add keywords separated by commas
                   </label>
                 </div>
@@ -191,7 +194,7 @@
                   </label>
                 </div>
                 <!-- Search button -->
-                <button type="button" data-te-ripple-init data-te-ripple-color="light"
+                <button type="button" id="search-btn" data-te-ripple-init data-te-ripple-color="light"
                   class="my-6 inline-block w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
                   Search
                 </button>
