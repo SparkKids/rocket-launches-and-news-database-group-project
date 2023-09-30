@@ -42,6 +42,8 @@ switch(type){
     case 'specific':
         var launchSearch = specific
     break;
+    default:
+        var launchType = ''
 }
 var keywords = href[2]
 
@@ -55,8 +57,8 @@ function launchesFetch() {
         if(response.ok){
             return response.json()
         } else {
-            throw new Error('too many requests, slow down');
             confirm("non-valid rocket name")
+            throw new Error('too many requests, slow down');
         }
     }).then((data) => {
         
@@ -81,7 +83,7 @@ function launchesFetch() {
             var content_container = document.createElement('div')
             content_container.classList.add('launch_content--container')
 
-            let date = data.results[i].last_updated.split('T')[0]
+            let date = data.results[i].net.split('T')[0]
             var dateElement = document.createElement('div')
             dateElement.textContent = "Last Updated: " + formatDate(date)
 

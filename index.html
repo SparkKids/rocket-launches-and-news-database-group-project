@@ -112,11 +112,11 @@
     <!-- Navbar -->
 
     <!-- Jumbotron -->
-    <div class="px-6 
+    <div class="px-10 
     py-12 
     text-center 
     md:px-12 
-    lg:py-24 
+    lg:py-40
     lg:text-left
     mb-0">
       <div class="w-100 
@@ -156,7 +156,7 @@
                 <div class="relative mb-8 flex flex-row" data-te-input-wrapper-init>
                   <!-- email -->
 
-                  <select id="options" data-te-select-init class="mb-14 peer block min-h-[auto] w-half rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0">
+                  <select id="options" data-te-select-init class="mb-4 peer block min-h-[auto] w-half rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0">
                     <option value="0" selected disabled hidden>--select--</option>
                     <option value="upcoming">upcoming</option>
                     <option value="previous">previous</option>
@@ -164,12 +164,12 @@
                     <option value="specific" >specific</option>
                   </select>
 
-                  <div id="hidden-option" class="relative hidden left-10 outline-1 border-0 bg-transparent px-3 leading-[1.6] " data-te-input-wrapper-init>
+                  <div id="hidden-option" class="absolute hidden right-0 outline-1 border-0 bg-transparent px-3 leading-[1.6] " data-te-input-wrapper-init>
                   <input type="text"
-                    class="mb-3 block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
+                    class=" block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
                     id="hiddenInput" placeholder="-ie Falcon 9 Block 5" />
                   <label for="hiddenInput"
-                    class="relative bottom-[4.5rem] left-0 max-w-[90%] text-neutral-500">rocket name: 
+                    class="relative bottom-[3.8rem] left-0 max-w-[90%] text-neutral-500">rocket name: 
                   </label>
                 </div>
                 </div>
@@ -195,7 +195,7 @@
                 </div>
                 <!-- Search button -->
                 <button type="button" id="search-btn" data-te-ripple-init data-te-ripple-color="light"
-                  class="my-6 inline-block w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                  class="inline-block w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
                   Search
                 </button>
               </form>
