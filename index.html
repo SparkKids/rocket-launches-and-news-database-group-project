@@ -1,29 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
 </head>
 
-<header>
-    <h1>
-        Rocket Launch Database
-    </h1>
-</header>
-
 <body>
-    <div class="content_container">
-        <div class="left_list">
-            <ul class="launch_list"></ul>
+  <!-- Section: Design Block -->
+  <section class="background-radial-gradient overflow-hidden">
+    <style>
+      .background-radial-gradient {
+        background-color: hsl(218, 41%, 15%);
+        background-image: radial-gradient(650px circle at 0% 0%,
+            hsl(218, 41%, 35%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%),
+          radial-gradient(1250px circle at 100% 100%,
+            hsl(218, 41%, 45%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%);
+      }
+    </style>
+    <!-- Navbar -->
+    <nav
+      class="relative flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start"
+      data-te-navbar-ref>
+      <!-- Container wrapper -->
+      <div 
+        class="flex w-full flex-wrap items-center justify-between px-6">
+        <div 
+          class="flex items-center">
+          <!-- Toggle button -->
+          <button
+            class="block border-0 bg-transparent py-2 pr-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
+            type="button" data-te-collapse-init data-te-target="#navbarSupportedContentY"
+            aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
+            <span 
+              class="[&>svg]:w-7">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                fill="currentColor" 
+                class="h-7 w-7">
+                <path 
+                  fill-rule="evenodd"
+                  d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+          </button>
         </div>
 
-        <div class="right_list">
-            <ul class="article_list"></ul>
+        <!-- Collapsible wrapper -->
+        <div 
+          class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+          id="navbarSupportedContentY" 
+          data-te-collapse-item>
+          <!-- Left links -->
+          <ul 
+            class="mr-auto lg:flex lg:flex-row" 
+            data-te-navbar-nav-ref>
+            <li 
+              data-te-nav-item-ref>
+              <a 
+                class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
+                href="#!" 
+                data-te-nav-link-ref 
+                data-te-ripple-init 
+                data-te-ripple-color="light" 
+                disabled>Dashboard</a>
+            </li>
+            <li 
+              data-te-nav-item-ref>
+              <a 
+               class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
+                href="#!" data-te-nav-link-ref data-te-ripple-init data-te-ripple-color="light">Team</a>
+            </li>
+            <li  
+             class="mb-2 lg:mb-0" data-te-nav-item-ref>
+              <a 
+                class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
+                href="#!" 
+                data-te-nav-link-ref 
+                data-te-ripple-init 
+                data-te-ripple-color="light">
+                  
+              </a>
+            </li>
+          </ul>
+          <!-- Left links -->
         </div>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Jumbotron -->
+    <div class="px-6 
+    py-12 
+    text-center 
+    md:px-12 
+    lg:py-24 
+    lg:text-left
+    mb-0">
+      <div class="w-100 
+      mx-auto 
+      text-neutral-800 
+      sm:max-w-2xl 
+      md:max-w-3xl 
+      lg:max-w-5xl 
+      xl:max-w-7xl">
+        <div class="grid 
+        items-center 
+        gap-12 
+        lg:grid-cols-2">
+          <div class="mt-12 
+          lg:mt-0" 
+          style="z-index: 10">
+            <h1 class="mt-0 mb-12 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-[hsl(218,81%,95%)]">
+              Rocket Launch <br /><span class="text-[hsl(218,81%,75%)]"> Info and News </span>
+            </h1>
+            <p class="opacity-70 text-[hsl(218,81%,85%)]">
+              Select your criteria on the right, or leave blank to show current launches.
+            </p>
+          </div>
+          <div class="relative mb-12 lg:mb-0">
+            <div id="radius-shape-1" class="absolute rounded-full shadow-lg"></div>
+            <div id="radius-shape-2" class="absolute shadow-lg"></div>
+            <div
+              class="relative bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+              <form>
+                <!-- First last name -->
+                <div class="grid md:grid-cols-1 md:gap-6 mb-10">
+                  <h1 class="text-5xl text-center">Search Options</h1>
+                </div>
+                <div class="relative mb-8 flex flex-row" data-te-input-wrapper-init>
+                  <!-- email -->
+
+                  <select id="options" data-te-select-init class="mb-14 peer block min-h-[auto] w-half rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0">
+                    <option value="0" selected disabled hidden>--select--</option>
+                    <option value="1">upcoming</option>
+                    <option value="2">past</option>
+                    <option value="3">all</option>
+                    <option value="4" >specific</option>
+                  </select>
+
+                  <div id="hidden-option" class="relative hidden left-10 outline-1 border-0 bg-transparent px-3 leading-[1.6] " data-te-input-wrapper-init>
+                  <input type="password"
+                    class="mb-3 block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
+                    id="exampleFormControlInput4" placeholder="-ie Falcon 9 Block 5" />
+                  <label for="exampleFormControlInput4"
+                    class="relative bottom-[4.5rem] left-0 max-w-[90%] text-neutral-500">rocket name: 
+                  </label>
+                </div>
+                </div>
+                <!-- hidden class -->
+                <div class="relative mb-6" data-te-input-wrapper-init>
+                  <!-- password -->
+                  <input type="text"
+                    class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                    id="exampleFormControlInput4" placeholder="Password" />
+                  <label for="exampleFormControlInput4"
+                    class="p-2 absolute bottom-10 left-0 max-w-[90%] text-neutral-500">Add keywords separated by commas
+                  </label>
+                </div>
+                <!-- Save search option checkbox -->
+                <div class="mb-6 flex min-h-[1.5rem] justify-center pl-[1.5rem]">
+                  <input
+                    class="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-secondary rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none hover-cursor"
+                    type="checkbox" value="" id="flexCheckChecked" checked />
+                  <label class="inline-block pl-[0.15rem] hover:cursor-pointer dark:text-neutral-50"
+                    for="flexCheckChecked">
+                    save search
+                  </label>
+                </div>
+                <!-- Search button -->
+                <button type="button" data-te-ripple-init data-te-ripple-color="light"
+                  class="my-6 inline-block w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
-    <script src="./script.js"></script>
+    
+    <!-- Jumbotron -->
+  </section>
+  <!-- <div class="flex items-center justify-around  py-10 pl-10 bg-[#242a3f] h-32 text-3xl">
+    <ul class="flex flex-row text-white text-left">
+      <li><a class="m-5" href="#">Test Link</a></li>
+      <li><a class="m-5" href="#">Test Link</a></li>
+    </ul>
+  </div> -->
+  <footer class="relative bottom-0 mtp-10 h-10 flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start"></footer>
+  <script src="./scriptHome.js"></script>
 </body>
 </html>

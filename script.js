@@ -1,23 +1,3 @@
-
-// var fetch = fetch('https://ll.thespacedevs.com/2.2.0/launch/upcoming/').then((response) => {
-//     return response.json();
-// }).then((data) => {
-//     console.log(data)
-
-    
-//     for(let i=0; i < 3; i++){
-//         var el = document.createElement('span')
-//         // el.textContent = data.results[i].name + " | " + data.results[i].last_updated + " , ";
-//         // data.results[i].image
-//         var img = document.createElement('image')
-//         img.classList.add('image')
-
-//         document.querySelector('.test').append(el)
-//         document.querySelector('.test').append(img)
-//     }
-//     return data;
-// })
-
 function articlesFetch() {fetch('https://api.spaceflightnewsapi.net/v4/articles/?limit=10').then((response) => {
         return response.json();
     }).then((data) => {
