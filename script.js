@@ -1,4 +1,13 @@
-function articlesFetch() {fetch('https://api.spaceflightnewsapi.net/v4/articles/?limit=10').then((response) => {
+
+
+
+
+
+
+var articlesURL = 'https://api.spaceflightnewsapi.net/v4/articles/?limit=10'
+
+
+function articlesFetch() {fetch(articlesURL).then((response) => {
         return response.json();
     }).then((data) => {
         console.log(data)
@@ -17,13 +26,37 @@ function articlesFetch() {fetch('https://api.spaceflightnewsapi.net/v4/articles/
     })
 }
 
+var href = location.href.split('=')
+var type = href[1].substring(0,href[1].length-2)
+var specific = href[3].substring(0,href[3].length)
+switch(type){
+    case 'upcoming':
+        var launchType = 'upcoming/'
+        break;
+    case 'previous':
+        var launchType = 'previous/'
+        break;
+    case '':
+        var launchType = ''
+        break;
+    case 'specific':
+        var launchSearch = specific
+    break;
+}
+var keywords = href[2]
+
+console.log(type)
+var launchesURLsearch = "https://lldev.thespacedevs.com/2.2.0/launch?mode=list&search=" + launchSearch
+var launchesURL = 'https://lldev.thespacedevs.com/2.2.0/launch/' + launchType
+
 function launchesFetch() {
-    fetch('https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?limit=10')
+    fetch(launchesURL)
     .then((response) => {
         if(response.ok){
             return response.json()
         } else {
             throw new Error('too many requests, slow down');
+            confirm("non-valid rocket name")
         }
     }).then((data) => {
         
