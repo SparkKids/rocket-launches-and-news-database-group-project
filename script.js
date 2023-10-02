@@ -1,5 +1,5 @@
 
-
+dayjs.extend(dayjs_plugin_duration)
 
 
 
@@ -35,9 +35,6 @@ switch(type){
         break;
     case 'previous':
         var launchType = 'previous/'
-        break;
-    case '':
-        var launchType = ''
         break;
     case 'specific':
         var launchSearch = specific
@@ -85,7 +82,7 @@ function launchesFetch() {
 
             let date = data.results[i].net.split('T')[0]
             var dateElement = document.createElement('div')
-            dateElement.textContent = "Last Updated: " + formatDate(date)
+            dateElement.textContent = formatDate(date)
 
             var el = document.createElement('li')
             el.textContent = data.results[i].name
@@ -98,7 +95,17 @@ function launchesFetch() {
             link.textContent = ' ...more'
             desc.append(link)
 
+            var clock = document.createElement('span')
+            clock.setAttribute('id', 'clock' + i)
+            var currentDate = dayjs()
+            var newDate = dayjs(formatDate(date))
+            var d = newDate.diff(currentDate)
+            var val = msToTime(Math.abs(d))
+            clock.innerHTML = val
+            console.log(msToTime(Math.abs(d)))
+
             content_container.append(dateElement)
+            content_container.append(clock)
             content_container.append(el)
             content_container.append(desc)
             image_container.append(img)
@@ -118,3 +125,35 @@ function formatDate(date) {
     var newDate = date1.toLocaleDateString("en-US", options)
     return newDate;
 }
+
+function msToTime(ms) {
+    
+    let seconds = (ms / 1000).toFixed(1);
+    let minutes = (ms / (1000 * 60)).toFixed(1);
+    let hours = (ms / (1000 * 60 * 60)).toFixed(1);
+    let days = (ms / (1000 * 60 * 60 * 24)).toFixed(1);
+    
+    var countDown = setInterval(() => {
+        
+        if(Math.floor(seconds)%60 === 0){
+            minutes--
+            seconds = 60
+            
+        } else if (Math.floor(minutes)%60 === 0){
+            hours--
+            minutes = 59
+            seconds = 60
+        } else if (Math.floor(hours) === 0) {
+            days--
+            hours = 23
+            minutes = 59
+            seconds = 60
+        } else if (days === 0){
+            clearInterval(countDown);
+        }
+
+        seconds=seconds-1
+        return (Math.floor(days) + " : " + (hours%24).toFixed() + " : " + (minutes%60).toFixed() + " : " + (seconds%60).toFixed());
+    }, 1000)
+    
+  }

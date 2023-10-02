@@ -27,6 +27,7 @@ header {
 
 .launch_image {
     height: 100%;
+    object-fit: cover;
 }
 .launch_image--container {
     height: 100%;
@@ -37,8 +38,8 @@ header {
     text-align: center;
 }
 .launch_content--container div {
-    position: absolute;
-    left: 220px;
+    position: relative;
+    left: 0;
     color: rgb(255, 241, 41);
     font-weight: 700;
 }
@@ -64,7 +65,7 @@ a {
 .launch_element {
     display: flex;
     flex-direction: row-reverse;
-    height: 200px;
+    height: 500px;
     width: 600px;
     background-color: var(--var-dark-blue);
     padding: 10px;
@@ -72,6 +73,7 @@ a {
 }
 .launch_desc {
     font-size: 18px;
+    padding: 10px;
 }
 .article_list {
     display: flex;
@@ -101,3 +103,6 @@ a {
     width: 40%;
 }
 
+#clock {
+    color: green;
+}

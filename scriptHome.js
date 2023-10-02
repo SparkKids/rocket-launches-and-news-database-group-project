@@ -29,3 +29,26 @@ btn.addEventListener('click', (e)=>{
     '&k=' + keywordVal + '&s=' + type.value
     location.href = link
 })
+
+var dismissBtn = document.getElementById('dismiss-btn')
+var modal = document.getElementById('modal')
+
+dismissBtn.addEventListener('click', (e) => {
+        if(modal.classList.contains('hidden')){
+            modal.classList.remove('hidden')
+        } else {
+            console.log("helo")
+            modal.classList.add('hidden')
+        }
+})
+
+var openModal = document.getElementById('open-modal')
+
+openModal.addEventListener('click', (e) => {
+    if(modal.classList.contains('hidden')){
+        modal.classList.remove('hidden')
+    } else {
+        console.log("helo")
+        modal.classList.add('hidden')
+    }
+})
