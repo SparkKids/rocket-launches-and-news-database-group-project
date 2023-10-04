@@ -73,35 +73,26 @@
           data-te-collapse-item>
           <!-- Left links -->
           <ul 
-            class="mr-auto lg:flex lg:flex-row" 
+            class="mr-auto lg:flex lg:flex-row lg:justify-center lg:align-center text-2xl" 
             data-te-navbar-nav-ref>
-            <li 
+            <li
               data-te-nav-item-ref>
-              <a 
-                class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
-                href="#!" 
-                data-te-nav-link-ref 
-                data-te-ripple-init 
-                data-te-ripple-color="light" 
-                disabled>Dashboard</a>
+              <img class="block py-2 pr-10 h-20 rotate-[12deg]" src="https://www.freeiconspng.com/thumbs/rocket-png/rocket-png-28.png" alt="">
             </li>
-            <li 
-              data-te-nav-item-ref>
-              <a 
-               class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
-                href="#!" data-te-nav-link-ref data-te-ripple-init data-te-ripple-color="light">Team</a>
-            </li>
-            <li  
-             class="mb-2 lg:mb-0" data-te-nav-item-ref>
-              <a 
-                class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
-                href="#!" 
-                data-te-nav-link-ref 
-                data-te-ripple-init 
-                data-te-ripple-color="light">
-                  
-              </a>
-            </li>
+            <div class="flex w-half content-center align-center justify-around items-center">
+              <li data-te-nav-item-ref>
+                <a 
+                  class="block py-2 pr-4 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
+                  href="#!" 
+                  >Dashboard</a>
+              </li>
+              <!-- <li 
+                data-te-nav-item-ref>
+                <a 
+                class="block py-2 pr-4 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
+                  href="#!" data-te-nav-link-ref>Team</a>
+              </li> -->
+            </div>
           </ul>
           <!-- Left links -->
         </div>
@@ -112,13 +103,14 @@
     <!-- Navbar -->
 
     <!-- Jumbotron -->
-    <div class="px-6 
+    <div class="px-10 
     py-12 
     text-center 
     md:px-12 
-    lg:py-24 
+    lg:py-40
     lg:text-left
-    mb-0">
+    mb-0
+    h-[90vh]">
       <div class="w-100 
       mx-auto 
       text-neutral-800 
@@ -143,8 +135,16 @@
           <div class="relative mb-12 lg:mb-0">
             <div id="radius-shape-1" class="absolute rounded-full shadow-lg"></div>
             <div id="radius-shape-2" class="absolute shadow-lg"></div>
-            <div
-              class="relative bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+
+
+            <div id="card" class="relative w-full flex items-center flex-col bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-20 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+              <h1 class="text-center text-5xl mb-10"><b class="text-cyan-900 text-shadow">Launch</b> Your Search</h1>
+              <button id="open-modal" class="w-[60%] rounded bg-cyan-900 px-6 pt-2.5 my-16 pb-2 text-lg font-lg uppercase text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Start Search</button>
+            </div>
+
+            <!-- modal -->
+            <div id="modal" data-te-modal-init
+              class="modal fixed hidden bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] rounded-lg px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
               <form>
                 <!-- First last name -->
                 <div class="grid md:grid-cols-1 md:gap-6 mb-10">
@@ -153,28 +153,27 @@
                 <div class="flex justify-start md:grid-cols-1 md:gap-6 mb-4">
                   <h1 class="text-2xl text-center"> Select Type: </h1>
                 </div>
-                <div class="relative mb-8 flex flex-row" data-te-input-wrapper-init>
+                <div class="relative mb-8 flex flex-row" data-te-modal-wrapper-init>
                   <!-- email -->
 
-                  <select id="options" data-te-select-init class="mb-14 peer block min-h-[auto] w-half rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0">
+                  <select id="options" data-te-select-init class="mb-4 peer block min-h-[auto] w-half rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0">
                     <option value="0" selected disabled hidden>--select--</option>
                     <option value="upcoming">upcoming</option>
                     <option value="previous">previous</option>
-                    <option value="">all</option>
                     <option value="specific" >specific</option>
                   </select>
 
-                  <div id="hidden-option" class="relative hidden left-10 outline-1 border-0 bg-transparent px-3 leading-[1.6] " data-te-input-wrapper-init>
+                  <div id="hidden-option" class="absolute hidden right-0 outline-1 border-0 bg-transparent px-3 leading-[1.6] " data-te-modal-wrapper-init>
                   <input type="text"
-                    class="mb-3 block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
+                    class=" block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
                     id="hiddenInput" placeholder="-ie Falcon 9 Block 5" />
                   <label for="hiddenInput"
-                    class="relative bottom-[4.5rem] left-0 max-w-[90%] text-neutral-500">rocket name: 
+                    class="relative bottom-[3.8rem] left-0 max-w-[90%] text-neutral-500">rocket name: 
                   </label>
                 </div>
                 </div>
                 <!-- hidden class -->
-                <div class="relative mb-6" data-te-input-wrapper-init>
+                <div class="relative mb-6" data-te-modal-init>
                   <!-- password -->
                   <input type="text"
                     class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -194,10 +193,16 @@
                   </label>
                 </div>
                 <!-- Search button -->
-                <button type="button" id="search-btn" data-te-ripple-init data-te-ripple-color="light"
-                  class="my-6 inline-block w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
-                  Search
-                </button>
+                <div class="flex flex-row justify-center">
+                  <button type="button" id="dismiss-btn" data-te-modal-dismiss
+                    class="inline-block m-5 w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                    cancel
+                  </button>
+                  <button type="button" id="search-btn" data-te-modal-init
+                    class="inline-block m-5 w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                    Search
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -215,6 +220,7 @@
     </ul>
   </div> -->
   <footer class="relative bottom-0 mtp-10 h-10 flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start"></footer>
+  
   <script src="./scriptHome.js"></script>
 </body>
 </html>
