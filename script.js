@@ -40,13 +40,13 @@ switch(type){
         var launchType = ''
         break;
     case 'specific':
-        var launchSearch = specific
+        var launchType = specific
     break;
 }
 var keywords = href[2]
 
 console.log(type)
-var launchesURLsearch = "https://lldev.thespacedevs.com/2.2.0/launch?mode=list&search=" + launchSearch
+var launchesURLsearch = "https://ll.thespacedevs.com/2.2.0/launch?mode=list&search=" + launchType
 var launchesURL = 'https://lldev.thespacedevs.com/2.2.0/launch/' + launchType
 
 function launchesFetch() {
@@ -55,8 +55,8 @@ function launchesFetch() {
         if(response.ok){
             return response.json()
         } else {
-            throw new Error('too many requests, slow down');
             confirm("non-valid rocket name")
+            throw new Error('too many requests, slow down');
         }
     }).then((data) => {
         
