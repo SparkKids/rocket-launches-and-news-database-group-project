@@ -1,9 +1,3 @@
-
-dayjs.extend(dayjs_plugin_duration)
-
-
-
-
 var articlesURL = 'https://api.spaceflightnewsapi.net/v4/articles/?limit=10'
 
 // retrieve articles from fetch
@@ -50,9 +44,6 @@ switch(type){
         break;
 }
 var keywords = href[2]
-
-// var launchesURLsearch = "https://lldev.thespacedevs.com/2.2.0/launch?mode=list&search=" + launchSearch
-
 
 function launchesFetch() {
     fetch(launchesURL)
@@ -104,6 +95,9 @@ function launchesFetch() {
             } else {
                 desc.textContent = data.results[i].status.description.substring(0, 140)
             }
+            var currentDate = dayjs()
+            var newDate = dayjs(formatDate(date))
+            var d = newDate.diff(currentDate)
             
             desc.classList.add('launch_desc')
             var link = document.createElement('a')
@@ -113,12 +107,7 @@ function launchesFetch() {
 
             var clock = document.createElement('span')
             clock.setAttribute('id', 'clock' + i)
-            var currentDate = dayjs()
-            var newDate = dayjs(formatDate(date))
-            var d = newDate.diff(currentDate)
-            msToTime(Math.abs(d))
-            // clock.textContent = val
-            // console.log(msToTime(6))
+            
 
             content_container.append(dateElement)
             content_container.append(clock)
@@ -127,9 +116,81 @@ function launchesFetch() {
             image_container.append(img)
             container.append(content_container)
             container.append(image_container)
-            document.querySelector('.launch_list').append(container)     
+            document.querySelector('.launch_list').append(container)
+            // document.getElementById('clock' + i).textContent = '00:00:00:00'   
         }
+        // ------------ CLOCK FUNCTION -----------
+        var clocks = []
+
+        for (let f = 0; f < 10; f++) {
+            clocks.push(document.getElementById('clock' + f))
+
+        }
+
+        var objects = []
+
+        for (var i = 0; i < 10; i++) {
+            var testTime = {
+                time: 0,
+                secs: function () { return (this.time / 1000) },
+                mins: function () { return (this.time / (1000 * 60)) },
+                hours: function () { return (this.time / (1000 * 60 * 60)) },
+                days: function () { return (this.time / (1000 * 60 * 60 * 24)) },
+            }
+            let date = data.results[i].net.split('T')[0]
+            var currentDate = dayjs()
+            var newDate = dayjs(formatDate(date))
+            var d = newDate.diff(currentDate)
+            console.log(d)
+            if (d < 0){
+                
+            }
+
+            testTime.time = d
+            objects.push(testTime)
+        }
+        var that = objects
+
+        var clockInterval = setInterval(() => {
+            for (let i = 0; i < objects.length; i++) {
+                that[i].time -= 1000
+
+                var dayF = Math.floor(that[i].days())
+                var hrsF = Math.floor(that[i].hours() % 24)
+                var minF = Math.floor(that[i].mins() % 60)
+                var secF = Math.floor(that[i].secs() % 60)
+
+                if (hrsF.toString().length < 2) {
+                    hrsF = "0" + hrsF
+                }
+                if (minF.toString().length < 2) {
+                    minF = "0" + minF
+                }
+                if (secF.toString().length < 2) {
+                    secF = "0" + secF
+                }
+                if (dayF.toString().length < 2) {
+                    dayF = "0" + dayF
+                }
+
+                if (dayF.toString().includes('-')){
+                    document.getElementById('clock' + i).style.color = 'red';
+                    
+                    secF = secF.toString().slice(1,3)
+                    minF = minF.toString().slice(1,3)
+                    hrsF = hrsF.toString().slice(1,3)
+                    dayF = dayF.toString().slice(1,3)
+                } else {
+                    document.getElementById('clock' + i).style.color = 'green';
+                }
+
+                clocks[i].textContent = dayF + " : " + hrsF + " : " + minF + " : " + secF
+
+            }
+
+        }, 1000)
     })
+    
 }
 
 articlesFetch()
@@ -141,36 +202,6 @@ function formatDate(date) {
     var newDate = date1.toLocaleDateString("en-US", options)
     return newDate;
 }
-var counter = 0;
-function msToTime(ms) {
-    
-    let seconds = (ms / 1000).toFixed(1);
-    let minutes = (ms / (1000 * 60)).toFixed(1);
-    let hours = (ms / (1000 * 60 * 60)).toFixed(1);
-    let days = (ms / (1000 * 60 * 60 * 24)).toFixed(1);
-    
-    var countDown = setInterval(() => {
-        
-        if(Math.floor(seconds)%60 === 0){
-            minutes--
-            seconds = 60
-            
-        } else if (Math.floor(minutes)%60 === 0){
-            hours--
-            minutes = 59
-            seconds = 60
-        } else if (Math.floor(hours) === 0) {
-            days--
-            hours = 23
-            minutes = 59
-            seconds = 60
-        } else if (days === 0){
-            clearInterval(countDown);
-        }
 
-        seconds--
-        document.getElementById('clock' + counter).textContent = (Math.floor(days) + " : " + (hours%24).toFixed() + " : " + (minutes%60).toFixed() + " : " + (seconds%60).toFixed());
-        counter++;
-    }, 1000)
-    
-  }
+var launchContentContainer = document.querySelector('.launch_list').childNodes
+

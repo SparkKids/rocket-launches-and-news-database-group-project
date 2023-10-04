@@ -38,7 +38,6 @@ dismissBtn.addEventListener('click', (e) => {
         if(modal.classList.contains('hidden')){
             modal.classList.remove('hidden')
         } else {
-            console.log("helo")
             modal.classList.add('hidden')
         }
 })
