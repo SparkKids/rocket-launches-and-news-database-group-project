@@ -11,3 +11,9 @@ html {
 .text-shadow{
     text-shadow: 8px 5px 5px rgba(82, 82, 82, 0.26);
 }
+#clock1 {
+    background-color: red;
+}
+::after {
+    background-color: black;
+}

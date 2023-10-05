@@ -160,6 +160,17 @@ function launchesFetch() {
                 var minF = Math.floor(that[i].mins() % 60)
                 var secF = Math.floor(that[i].secs() % 60)
 
+                if (dayF.toString().includes('-')){
+                    document.getElementById('clock' + i).style.color = 'red';
+                    
+                    secF = secF.toString().slice(1,3)
+                    minF = minF.toString().slice(1,3)
+                    hrsF = hrsF.toString().slice(1,3)
+                    dayF = dayF.toString().slice(1,3)
+                } else {
+                    document.getElementById('clock' + i).style.color = 'lightgreen';
+                }
+                
                 if (hrsF.toString().length < 2) {
                     hrsF = "0" + hrsF
                 }
@@ -173,16 +184,7 @@ function launchesFetch() {
                     dayF = "0" + dayF
                 }
 
-                if (dayF.toString().includes('-')){
-                    document.getElementById('clock' + i).style.color = 'red';
-                    
-                    secF = secF.toString().slice(1,3)
-                    minF = minF.toString().slice(1,3)
-                    hrsF = hrsF.toString().slice(1,3)
-                    dayF = dayF.toString().slice(1,3)
-                } else {
-                    document.getElementById('clock' + i).style.color = 'green';
-                }
+                
 
                 clocks[i].textContent = dayF + " : " + hrsF + " : " + minF + " : " + secF
 
