@@ -15,7 +15,9 @@ if (localStorage.getItem('search')) {
 // print out saved searches
 for (let i = 0; i < array.length; i++) {
     var type = array[i].type
-    var val = array[i].val
+    if (array[i].val) {
+        var val = array[i].val
+    } else var val = 0
     var key = array[i].key
 
     var search = document.createElement('span')
@@ -55,8 +57,8 @@ for (let i = 0; i < array.length; i++) {
             val: val,
         }
 
-        var link = './search.html?t=' + input.type +
-            '&k=' + input.key + '&s=' + input.val
+        var link = './search.html?t=' +  + type
+            '&k=' + key + '&s=' + val
 
         location.href = link
 
@@ -91,8 +93,12 @@ btn.addEventListener('click', (e) => {
     var typeVal = options.value
     var keywordVal = keyword.value
 
+    if (type.value) {
+        var val = type.value
+    } else var val = 'none'
+
     var link = './search.html?t=' + typeVal +
-        '&k=' + keywordVal + '&s=' + type.value
+        '&k=' + keywordVal + '&s=' + val
 
     var input = {
         type: typeVal,
