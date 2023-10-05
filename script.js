@@ -64,7 +64,6 @@ function launchesFetch() {
             throw new Error(error);
         }
     }).then((data) => {
-        
         console.log(data)
 
         for(let i=0; i < 10; i++){
