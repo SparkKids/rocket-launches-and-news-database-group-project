@@ -170,7 +170,7 @@ function launchesFetch() {
                 } else {
                     document.getElementById('clock' + i).style.color = 'lightgreen';
                 }
-                
+
                 if (hrsF.toString().length < 2) {
                     hrsF = "0" + hrsF
                 }
@@ -204,6 +204,4 @@ function formatDate(date) {
     var newDate = date1.toLocaleDateString("en-US", options)
     return newDate;
 }
-
-var launchContentContainer = document.querySelector('.launch_list').childNodes
 

@@ -17,3 +17,6 @@ html {
 ::after {
     background-color: black;
 }
+.savedSearches li {
+    margin: 5px;
+}

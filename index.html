@@ -12,7 +12,7 @@
           }
         }
     </style>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Document</title>
 </head>
 
@@ -110,7 +110,7 @@
     lg:py-40
     lg:text-left
     mb-0
-    h-[90vh]">
+    h-[50rem]">
       <div class="w-100 
       mx-auto 
       text-neutral-800 
@@ -138,8 +138,8 @@
 
 
             <div id="card" class="relative w-full flex items-center flex-col bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-20 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-              <h1 class="text-center text-5xl mb-10"><b class="text-cyan-900 text-shadow">Launch</b> Your Search</h1>
-              <button id="open-modal" class="w-[60%] rounded bg-cyan-900 px-6 pt-2.5 my-16 pb-2 text-lg font-lg uppercase text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Start Search</button>
+              <h1 class="text-center text-5xl mb-10 "><b class="text-shadow text-[#2d446c]">Launch</b> Your Search</h1>
+              <button id="open-modal" class="w-[60%] rounded bg-[#2d446c] px-6 pt-2.5 my-16 pb-2 text-lg font-lg uppercase text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Start Search</button>
             </div>
 
             <!-- modal -->
@@ -150,6 +150,10 @@
                 <div class="grid md:grid-cols-1 md:gap-6 mb-10">
                   <h1 class="text-5xl text-center"> Search Options </h1>
                 </div>
+                <button type="button" id="dismiss-btn" data-te-modal-dismiss
+                    class="absolute text-center top-5 right-5 inline-block h-6 w-6 rounded bg-cyan-900 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                    X
+                  </button>
                 <div class="flex justify-start md:grid-cols-1 md:gap-6 mb-4">
                   <h1 class="text-2xl text-center"> Select Type: </h1>
                 </div>
@@ -176,8 +180,8 @@
                 <div class="relative mb-6" data-te-modal-init>
                   <!-- password -->
                   <input type="text"
-                    class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    id="keywordInput" placeholder="Password" />
+                    class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] placeholder:opacity-100 focus:placeholder:opacity-0"
+                    id="keywordInput" placeholder="keyword, keyword" />
                   <label for="keywordInput"
                     class="p-2 absolute bottom-10 left-0 max-w-[90%] text-neutral-500">Add keywords separated by commas
                   </label>
@@ -185,19 +189,16 @@
                 <!-- Save search option checkbox -->
                 <div class="mb-6 flex min-h-[1.5rem] justify-center pl-[1.5rem]">
                   <input
-                    class="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] appearance-secondary rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none hover-cursor"
+                    class="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] hover:cursor-pointer appearance-secondary rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none hover-cursor"
                     type="checkbox" value="" id="flexCheckChecked" checked />
-                  <label class="inline-block pl-[0.15rem] hover:cursor-pointer dark:text-neutral-50"
+                  <label class="inline-block pl-[0.15rem] hover:cursor-pointer"
                     for="flexCheckChecked">
                     save search
                   </label>
                 </div>
                 <!-- Search button -->
                 <div class="flex flex-row justify-center">
-                  <button type="button" id="dismiss-btn" data-te-modal-dismiss
-                    class="inline-block m-5 w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
-                    cancel
-                  </button>
+                  
                   <button type="button" id="search-btn" data-te-modal-init
                     class="inline-block m-5 w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
                     Search
@@ -213,14 +214,12 @@
     
     <!-- Jumbotron -->
   </section>
-  <!-- <div class="flex items-center justify-around  py-10 pl-10 bg-[#242a3f] h-32 text-3xl">
-    <ul class="flex flex-row text-white text-left">
-      <li><a class="m-5" href="#">Test Link</a></li>
-      <li><a class="m-5" href="#">Test Link</a></li>
-    </ul>
-  </div> -->
+  <div class="flex h-full justify-around flex-col py-10 pl-10 bg-[#242a3f] h-32 text-3xl">
+    <h1 class="text-white mb-10">Search History: </h1>
+    <ul class="savedSearches flex flex-col text-white justify-between"></ul>
+  </div>
   <footer class="relative bottom-0 mtp-10 h-10 flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start"></footer>
   
-  <script src="./scriptHome.js"></script>
+  <script src="./assets/js/scriptHome.js"></script>
 </body>
 </html>
