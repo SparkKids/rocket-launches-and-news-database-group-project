@@ -23,6 +23,7 @@ function articlesFetch() {
         img.classList.add("article_image");
         img.src = data.results[i].image_url;
         img.textContent = `<img src="${img.src}"/>`;
+        
 
         img.addEventListener("click", (img) => {
           location.href = img.target.src;
@@ -38,8 +39,19 @@ function articlesFetch() {
         var el = document.createElement("li");
         el.textContent = data.results[i].title;
 
+        var desc = document.createElement("p");
+        var articleSummary = data.results[i].summary;
+        desc.textContent = articleSummary.substring(0, 200);
+
+        desc.classList.add("article_desc");
+        var link = document.createElement("a");
+        link.href = data.results[i].url;
+        link.textContent = " ...more";
+        desc.append(link);
+
         content_container.append(dateElement);
         content_container.append(el);
+        content_container.append(desc);
         image_container.append(img);
         container.append(content_container);
         container.append(image_container);
