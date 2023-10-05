@@ -22,7 +22,7 @@ function articlesFetch() {
         var img = document.createElement("img");
         img.classList.add("article_image");
         img.src = data.results[i].image_url;
-        img.textContent = `<img src="${img.src}"/>`;
+        // img.textContent = `<img src="${img.src}"/>`;
 
         img.addEventListener("click", (img) => {
           location.href = img.target.src;
@@ -64,7 +64,7 @@ switch (type) {
       "https://lldev.thespacedevs.com/2.2.0/launch/" + launchType;
     break;
   case "specific":
-    var launchSearch = specific4;
+    var launchSearch = specific;
     var launchesURL =
       "https://lldev.thespacedevs.com/2.2.0/launch?mode=list&search=" +
       launchSearch;
