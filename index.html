@@ -41,24 +41,16 @@
       class="relative flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start"
       data-te-navbar-ref>
       <!-- Container wrapper -->
-      <div 
-        class="flex w-full flex-wrap items-center justify-between px-6">
-        <div 
-          class="flex items-center">
+      <div class="flex w-full flex-wrap items-center justify-between px-6">
+        <div class="flex items-center">
           <!-- Toggle button -->
           <button
             class="block border-0 bg-transparent py-2 pr-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
             type="button" data-te-collapse-init data-te-target="#navbarSupportedContentY"
             aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
-            <span 
-              class="[&>svg]:w-7">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 24 24" 
-                fill="currentColor" 
-                class="h-7 w-7">
-                <path 
-                  fill-rule="evenodd"
+            <span class="[&>svg]:w-7">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+                <path fill-rule="evenodd"
                   d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
                   clip-rule="evenodd" />
               </svg>
@@ -67,24 +59,18 @@
         </div>
 
         <!-- Collapsible wrapper -->
-        <div 
-          class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
-          id="navbarSupportedContentY" 
-          data-te-collapse-item>
+        <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+          id="navbarSupportedContentY" data-te-collapse-item>
           <!-- Left links -->
-          <ul 
-            class="mr-auto lg:flex lg:flex-row lg:justify-center lg:align-center text-2xl" 
-            data-te-navbar-nav-ref>
-            <li
-              data-te-nav-item-ref>
-              <img class="block py-2 pr-10 h-20 rotate-[12deg]" src="https://www.freeiconspng.com/thumbs/rocket-png/rocket-png-28.png" alt="">
+          <ul class="mr-auto lg:flex lg:flex-row lg:justify-center lg:align-center text-2xl" data-te-navbar-nav-ref>
+            <li data-te-nav-item-ref>
+              <img class="block py-2 pr-10 h-20 rotate-[12deg]"
+                src="https://www.freeiconspng.com/thumbs/rocket-png/rocket-png-28.png" alt="">
             </li>
             <div class="flex w-half content-center align-center justify-around items-center">
               <li data-te-nav-item-ref>
-                <a 
-                  class="block py-2 pr-4 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
-                  href="#!" 
-                  >Dashboard</a>
+                <a class="block py-2 pr-4 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
+                  href="#!">Dashboard</a>
               </li>
               <!-- <li 
                 data-te-nav-item-ref>
@@ -110,8 +96,7 @@
         gap-12 
         lg:grid-cols-2">
           <div class="mt-12 
-          lg:mt-0" 
-          style="z-index: 10">
+          lg:mt-0" style="z-index: 10">
             <h1 class="mt-0 mb-12 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl text-[hsl(218,81%,95%)]">
               Rocket Launch <br /><span class="text-[hsl(218,81%,75%)]"> Info and News </span>
             </h1>
@@ -124,9 +109,12 @@
             <div id="radius-shape-2" class="absolute shadow-lg"></div>
 
 
-            <div id="card" class="relative w-full flex items-center flex-col bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-20 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+            <div id="card"
+              class="relative w-full flex items-center flex-col bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-20 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
               <h1 class="text-center text-5xl mb-10 "><b class="text-shadow text-[#2d446c]">Launch</b> Your Search</h1>
-              <button id="open-modal" class="w-[60%] rounded bg-[#2d446c] px-6 pt-2.5 my-16 pb-2 text-lg font-lg uppercase text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Start Search</button>
+              <button id="open-modal"
+                class="w-[60%] rounded bg-[#2d446c] px-6 pt-2.5 my-16 pb-2 text-lg font-lg uppercase text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Start
+                Search</button>
             </div>
 
             <!-- modal -->
@@ -138,30 +126,33 @@
                   <h1 class="text-5xl text-center"> Search Options </h1>
                 </div>
                 <button type="button" id="dismiss-btn" data-te-modal-dismiss
-                    class="absolute text-center top-5 right-5 inline-block h-6 w-6 rounded bg-cyan-900 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
-                    X
-                  </button>
+                  class="absolute text-center top-5 right-5 inline-block h-6 w-6 rounded bg-cyan-900 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                  X
+                </button>
                 <div class="flex justify-start md:grid-cols-1 md:gap-6 mb-4">
                   <h1 class="text-2xl text-center"> Select Type: </h1>
                 </div>
                 <div class="relative mb-8 flex flex-row" data-te-modal-wrapper-init>
                   <!-- email -->
 
-                  <select id="options" data-te-select-init class="mb-4 peer block min-h-[auto] w-half rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0">
+                  <select id="options" data-te-select-init
+                    class="mb-4 peer block min-h-[auto] w-half rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0">
                     <option value="0" selected disabled hidden>--select--</option>
                     <option value="upcoming">upcoming</option>
                     <option value="previous">previous</option>
-                    <option value="specific" >specific</option>
+                    <option value="specific">specific</option>
                   </select>
 
-                  <div id="hidden-option" class="absolute hidden right-0 outline-1 border-0 bg-transparent px-3 leading-[1.6] " data-te-modal-wrapper-init>
-                  <input type="text"
-                    class=" block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
-                    id="hiddenInput" placeholder="-ie Falcon 9 Block 5" />
-                  <label for="hiddenInput"
-                    class="relative bottom-[3.8rem] left-0 max-w-[90%] text-neutral-500">rocket name: 
-                  </label>
-                </div>
+                  <div id="hidden-option"
+                    class="absolute hidden right-0 outline-1 border-0 bg-transparent px-3 leading-[1.6] "
+                    data-te-modal-wrapper-init>
+                    <input type="text"
+                      class=" block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
+                      id="hiddenInput" placeholder="-ie Falcon 9 Block 5" />
+                    <label for="hiddenInput" class="relative bottom-[3.8rem] left-0 max-w-[90%] text-neutral-500">rocket
+                      name:
+                    </label>
+                  </div>
                 </div>
                 <!-- hidden class -->
                 <div class="relative mb-6" data-te-modal-init>
@@ -169,8 +160,8 @@
                   <input type="text"
                     class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] placeholder:opacity-100 focus:placeholder:opacity-0"
                     id="keywordInput" placeholder="keyword, keyword" />
-                  <label for="keywordInput"
-                    class="p-2 absolute bottom-10 left-0 max-w-[90%] text-neutral-500">Add keywords separated by commas
+                  <label for="keywordInput" class="p-2 absolute bottom-10 left-0 max-w-[90%] text-neutral-500">Add
+                    keywords separated by commas
                   </label>
                 </div>
                 <!-- Save search option checkbox -->
@@ -178,14 +169,13 @@
                   <input
                     class="relative float-left mt-[0.15rem] mr-[6px] -ml-[1.5rem] h-[1.125rem] w-[1.125rem] hover:cursor-pointer appearance-secondary rounded-[0.25rem] border-[0.125rem] border-solid border-neutral-300 outline-none hover-cursor"
                     type="checkbox" value="" id="flexCheckChecked" checked />
-                  <label class="inline-block pl-[0.15rem] hover:cursor-pointer"
-                    for="flexCheckChecked">
+                  <label class="inline-block pl-[0.15rem] hover:cursor-pointer" for="flexCheckChecked">
                     save search
                   </label>
                 </div>
                 <!-- Search button -->
                 <div class="flex flex-row justify-center">
-                  
+
                   <button type="button" id="search-btn" data-te-modal-init
                     class="inline-block m-5 w-full rounded bg-cyan-700 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
                     Search
@@ -197,16 +187,19 @@
         </div>
       </div>
     </div>
-    
-    
+
+
     <!-- Jumbotron -->
   </section>
   <div class="flex h-full justify-around flex-col py-10 pl-10 bg-[#242a3f] h-32 text-3xl">
     <h1 class="text-white mb-10">Search History: </h1>
     <ul class="savedSearches flex flex-col text-white justify-between"></ul>
   </div>
-  <footer class="relative bottom-0 mtp-10 h-10 flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start"></footer>
-  
+  <footer
+    class="relative bottom-0 mtp-10 h-10 flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start">
+  </footer>
+
   <script src="./assets/js/scriptHome.js"></script>
 </body>
+
 </html>
