@@ -41,6 +41,7 @@ header {
     position: relative;
     left: 0;
     color: rgb(255, 241, 41);
+    font-size: 25px;
     font-weight: 700;
 }
 .launch_content--container li {
@@ -49,7 +50,6 @@ header {
 }
 .launch_content--container p {
     color: var(--var-dark-alt);
-    
 }
 a {
     text-decoration: none;
@@ -75,6 +75,17 @@ a {
     font-size: 18px;
     padding: 10px;
 }
+.article_image{
+    height: 100%;
+    object-fit: cover;
+}
+.article_image--container {
+    height: 60%;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .article_list {
     display: flex;
     flex-direction: column;
@@ -83,12 +94,26 @@ a {
     padding: 0;
 }
 .article_element {
-    height: 250px;
-    width: 250px;
+    height: 500px;
+    width: 600px;
     background-color: var(--var-dark-blue);
     padding: 10px;
     margin: 10px 100px;
 
+}
+.article_content--container {
+    text-align: center;
+}
+
+.article_content--container div {
+    color: rgb(255, 241, 41);
+    font-size: 25px;
+    font-weight: 700;
+}
+.article_content--container li {
+    font-size: 25px;
+    margin: 2%;
+    color: var(--var-highlight);
 }
 .content_container {
     display: flex;
@@ -97,10 +122,10 @@ a {
     align-items: flex-start;
 }
 .left_list {
-    width: 60%;
+    width: 50%;
 }
 .right_list {
-    width: 40%;
+    width: 50%;
 }
 
 #clock {
