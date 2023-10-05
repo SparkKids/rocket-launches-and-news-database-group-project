@@ -6,7 +6,7 @@ var type = document.getElementById('hiddenInput')
 var keyword = document.getElementById('keywordInput')
 
 var array = []
-if(localStorage.getItem('search')){
+if (localStorage.getItem('search')) {
     var data = JSON.parse(localStorage.getItem('search'))
     array = data
 
@@ -44,25 +44,22 @@ for (let i = 0; i < array.length; i++) {
     if (!array[i].key) {
         key = 'none'
     }
-    
+
     savedSearches.classList = 'flex flex-col'
 
-    search.addEventListener('click', (e)=>{
-
-        var typeVal = options.value
-        var keywordVal = keyword.value
-
+    search.addEventListener('click', (e) => {
+        
         var input = {
             type: type,
             key: key,
             val: val,
         }
-    
+
         var link = './search.html?t=' + input.type +
-        '&k=' + input.key + '&s=' + input.val
+            '&k=' + input.key + '&s=' + input.val
 
         location.href = link
-    
+
         e.preventDefault()
     })
 
@@ -76,26 +73,26 @@ for (let i = 0; i < array.length; i++) {
 options.selectedIndex = 0;
 options.onchange = (e) => {
     console.log(e.target)
-    if(e.target.value === "specific"){
-        if(hiddenOption.classList.contains('hidden')){
+    if (e.target.value === "specific") {
+        if (hiddenOption.classList.contains('hidden')) {
             hiddenOption.classList.remove('hidden')
         }
     } else {
-        if (hiddenOption.classList.contains('hidden')){
-        } else { hiddenOption.classList.add('hidden')}
+        if (hiddenOption.classList.contains('hidden')) {
+        } else { hiddenOption.classList.add('hidden') }
     }
 }
 
 
 // set link to retrieve later based on user input
 
-btn.addEventListener('click', (e)=>{
+btn.addEventListener('click', (e) => {
 
     var typeVal = options.value
     var keywordVal = keyword.value
 
     var link = './search.html?t=' + typeVal +
-    '&k=' + keywordVal + '&s=' + type.value
+        '&k=' + keywordVal + '&s=' + type.value
 
     var input = {
         type: typeVal,
@@ -103,7 +100,7 @@ btn.addEventListener('click', (e)=>{
         val: type.value,
     }
 
-    
+
     if (document.querySelector('#flexCheckChecked').checked) {
         console.log("yes")
         array.push(input)
@@ -123,18 +120,18 @@ btn.addEventListener('click', (e)=>{
 var dismissBtn = document.getElementById('dismiss-btn')
 var modal = document.getElementById('modal')
 dismissBtn.addEventListener('click', (e) => {
-        if(modal.classList.contains('hidden')){
-            modal.classList.remove('hidden')
-        } else {
-            modal.classList.add('hidden')
-        }
+    if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden')
+    } else {
+        modal.classList.add('hidden')
+    }
 })
 
 
 // open modal button
 var openModal = document.getElementById('open-modal')
 openModal.addEventListener('click', (e) => {
-    if(modal.classList.contains('hidden')){
+    if (modal.classList.contains('hidden')) {
         modal.classList.remove('hidden')
     } else {
         modal.classList.add('hidden')
