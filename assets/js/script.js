@@ -14,19 +14,6 @@ function articlesFetch() {
         var container = document.createElement("div");
         container.classList.add("article_element");
 
-        var image_container = document.createElement("div");
-        image_container.classList.add("article_image--container");
-
-        var img = document.createElement("img");
-        img.classList.add("article_image");
-        img.src = data.results[i].image_url;
-
-        var a = document.createElement("a");
-        a.classList.add("article_image");
-        a.href = img.src;
-        img.setAttribute("src", a.href);
-        a.append(img);
-
         var content_container = document.createElement("div");
         content_container.classList.add("article_content--container");
 
@@ -46,6 +33,19 @@ function articlesFetch() {
         link.href = data.results[i].url;
         link.textContent = " ...more";
         desc.append(link);
+
+        var image_container = document.createElement("div");
+        image_container.classList.add("article_image--container");
+
+        var img = document.createElement("img");
+        img.classList.add("article_image");
+        img.src = data.results[i].image_url;
+
+        var a = document.createElement("a");
+        a.classList.add("article_image");
+        a.href = img.src;
+        img.setAttribute("src", a.href);
+        a.append(img);
 
         content_container.append(dateElement);
         content_container.append(el);
@@ -119,11 +119,6 @@ function launchesFetch() {
         } else {
           img.setAttribute("alt", "Picture of the " + data.results[i].name);
         }
-
-        img.addEventListener("click", (img) => {
-          // console.log(img.target.src)
-          location.href = img.target.src;
-        });
 
         var content_container = document.createElement("div");
         content_container.classList.add("launch_content--container");
@@ -318,6 +313,7 @@ function launchesFetch() {
         desc.append(link);
 
         var clock = document.createElement("span");
+        clock.classList.add("clock_styling");
         clock.setAttribute("id", "clock" + i);
 
         content_container.append(dateElement);
