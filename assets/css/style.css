@@ -1,0 +1,13 @@
+html {
+    height: 100%;
+}
+.modal {
+    top: 10%;
+    left: 50%;
+    margin-left: -300px;
+    width: 600px;
+    z-index: 50;
+}
+.text-shadow{
+    text-shadow: 8px 5px 5px rgba(82, 82, 82, 0.26);
+}
