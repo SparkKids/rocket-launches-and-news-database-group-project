@@ -14,7 +14,7 @@
     </style>
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Document</title>
+  <title>Dashboard</title>
 </head>
 
 <body>
@@ -114,8 +114,8 @@
               class="relative w-full flex items-center flex-col bg-[hsla(0,0%,100%,0.9)] backdrop-blur-[25px] backdrop-saturate-[200%] block rounded-lg px-6 py-20 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
               <h1 class="text-center text-5xl mb-10 "><b class="text-shadow text-[#2d446c]">Launch</b> Your Search</h1>
               <button id="open-modal"
-                class="w-[60%] rounded bg-[#2d446c] px-6 pt-2.5 my-16 pb-2 text-lg font-lg uppercase text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">Start
-                Search</button>
+                class="w-[60%] rounded bg-[#2d446c] px-6 pt-2.5 my-16 pb-2 text-lg font-lg uppercase text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]">
+                Start Search </button>
             </div>
 
             <!-- modal -->
@@ -150,21 +150,26 @@
                     <input type="text"
                       class=" block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
                       id="hiddenInput" placeholder="-ie Falcon 9 Block 5" />
-                    <label for="hiddenInput" class="relative bottom-[3.8rem] left-0 max-w-[90%] text-neutral-500">rocket
-                      name:
+                    <label for="hiddenInput" class="relative bottom-[3.8rem] left-0 max-w-[90%] text-neutral-500">
+                      Search Term: 
                     </label>
                   </div>
                 </div>
                 <!-- hidden class -->
-                <div class="relative mb-6" data-te-modal-init>
-                  <!-- password -->
-                  <input type="text"
-                    class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] placeholder:opacity-100 focus:placeholder:opacity-0"
-                    id="keywordInput" placeholder="keyword, keyword" />
-                  <label for="keywordInput" class="p-2 absolute bottom-10 left-0 max-w-[90%] text-neutral-500">Add
-                    keywords separated by commas
-                  </label>
-                </div>
+                <form autocomplete="off" action="./">
+                  <div class="relative mb-6" data-te-modal-init>
+                    <!-- password -->
+                    <div>
+                      <input type="text"
+                        class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] placeholder:opacity-100 focus:placeholder:opacity-0"
+                        id="keywordInput" placeholder="start typing" onKeyup="autoComplete(this.value)"/>
+                      <label for="keywordInput" class="p-2 absolute bottom-10 left-0 max-w-[90%] text-neutral-600">
+                        Previous Searches
+                      </label>
+                    </div>
+                  </div>
+                  <div class="absolute autocomplete bg-white"></div>
+                </form>
                 <!-- Save search option checkbox -->
                 <div class="mb-6 flex min-h-[1.5rem] justify-center pl-[1.5rem]">
                   <input
@@ -193,8 +198,11 @@
     <!-- Jumbotron -->
   </section>
   <div class="flex h-full justify-around flex-col py-10 pl-10 bg-[#242a3f] h-32 text-3xl">
-    <h1 class="text-white mb-10">Search History: </h1>
-    <ul class="savedSearches flex flex-col text-white justify-between"></ul>
+    <span class="flex flex-row justify-between">
+      <h1 class="text-white mb-10">Search History: </h1>
+      <button class="clear-btn mr-10 mb-10 py-2 px-4 rounded text-neutral-500 hover:text-white hover:bg-[#2d446c]">clear</button>
+    </span>
+    <ul class="absolute flex flex-col savedSearches"></ul>
   </div>
   <footer
     class="relative bottom-0 mtp-10 h-10 flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start">
