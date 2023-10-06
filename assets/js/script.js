@@ -1,5 +1,3 @@
-dayjs.extend(dayjs_plugin_duration);
-
 var articlesURL = "https://api.spaceflightnewsapi.net/v4/articles/?limit=10";
 
 // retrieve articles from fetch
@@ -22,7 +20,7 @@ function articlesFetch() {
         var img = document.createElement("img");
         img.classList.add("article_image");
         img.src = data.results[i].image_url;
-        // img.textContent = `<img src="${img.src}"/>`;
+        img.textContent = `<img src="${img.src}"/>`;
 
         img.addEventListener("click", (img) => {
           location.href = img.target.src;
@@ -38,8 +36,19 @@ function articlesFetch() {
         var el = document.createElement("li");
         el.textContent = data.results[i].title;
 
+        var desc = document.createElement("p");
+        var articleSummary = data.results[i].summary;
+        desc.textContent = articleSummary.substring(0, 200);
+
+        desc.classList.add("article_desc");
+        var link = document.createElement("a");
+        link.href = data.results[i].url;
+        link.textContent = " ...more";
+        desc.append(link);
+
         content_container.append(dateElement);
         content_container.append(el);
+        content_container.append(desc);
         image_container.append(img);
         container.append(content_container);
         container.append(image_container);
@@ -208,29 +217,6 @@ function msToTime(ms) {
       " : " +
       (seconds % 60).toFixed();
   }, 1000);
-}
-var articlesURL = 'https://api.spaceflightnewsapi.net/v4/articles/?limit=10'
-
-// retrieve articles from fetch
-function articlesFetch() {
-    fetch(articlesURL).then((response) => {
-        return response.json();
-    }).then((data) => {
-        console.log(data)
-
-        // create elements using dynamically created elements
-        for (let i = 0; i < 10; i++) {
-            var el = document.createElement('li')
-            el.classList.add('article_element')
-            el.textContent = data.results[i].title
-            var img = document.createElement('image')
-            img.classList.add('article_image')
-            img.src = data.results[i].image_url
-
-            document.querySelector('.article_list').append(el)
-            document.querySelector('.article_list').appendChild(img)
-        }
-    })
 }
 
 // format url string so get the type and/or specific search values
