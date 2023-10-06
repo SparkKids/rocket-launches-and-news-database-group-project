@@ -14,18 +14,6 @@ function articlesFetch() {
         var container = document.createElement("div");
         container.classList.add("article_element");
 
-        var image_container = document.createElement("div");
-        image_container.classList.add("article_image--container");
-
-        var img = document.createElement("img");
-        img.classList.add("article_image");
-        img.src = data.results[i].image_url;
-        img.textContent = `<img src="${img.src}"/>`;
-
-        img.addEventListener("click", (img) => {
-          location.href = img.target.src;
-        });
-
         var content_container = document.createElement("div");
         content_container.classList.add("article_content--container");
 
@@ -46,10 +34,23 @@ function articlesFetch() {
         link.textContent = " ...more";
         desc.append(link);
 
+        var image_container = document.createElement("div");
+        image_container.classList.add("article_image--container");
+
+        var img = document.createElement("img");
+        img.classList.add("article_image");
+        img.src = data.results[i].image_url;
+
+        var a = document.createElement("a");
+        a.classList.add("article_image");
+        a.href = img.src;
+        img.setAttribute("src", a.href);
+        a.append(img);
+
         content_container.append(dateElement);
         content_container.append(el);
         content_container.append(desc);
-        image_container.append(img);
+        image_container.append(a);
         container.append(content_container);
         container.append(image_container);
         document.querySelector(".article_list").append(container);
@@ -96,7 +97,6 @@ function formatDate(date) {
   var newDate = date1.toLocaleDateString("en-US", options);
   return newDate;
 }
-var counter = 0;
 
 function launchesFetch() {
     fetch(launchesURL)
@@ -245,12 +245,83 @@ function launchesFetch() {
             }, 1000)
         })
 
-}
+      for (let f = 0; f < 10; f++) {
+        clocks.push(document.getElementById("clock" + f));
+      }
+
+      var objects = [];
+
+      for (var i = 0; i < 10; i++) {
+        var testTime = {
+          time: 0,
+          secs: function () {
+            return this.time / 1000;
+          },
+          mins: function () {
+            return this.time / (1000 * 60);
+          },
+          hours: function () {
+            return this.time / (1000 * 60 * 60);
+          },
+          days: function () {
+            return this.time / (1000 * 60 * 60 * 24);
+          },
+        };
+        let date = data.results[i].net.split("T")[0];
+        var currentDate = dayjs();
+        var newDate = dayjs(formatDate(date));
+        var d = newDate.diff(currentDate);
+        console.log(d);
+        if (d < 0) {
+        }
+
+        testTime.time = d;
+        objects.push(testTime);
+      }
+      var that = objects;
+
+      var clockInterval = setInterval(() => {
+        for (let i = 0; i < objects.length; i++) {
+          that[i].time -= 1000;
+
+          var dayF = Math.floor(that[i].days());
+          var hrsF = Math.floor(that[i].hours() % 24);
+          var minF = Math.floor(that[i].mins() % 60);
+          var secF = Math.floor(that[i].secs() % 60);
+
+          if (dayF.toString().includes("-")) {
+            document.getElementById("clock" + i).style.color = "red";
+
+            secF = secF.toString().slice(1, 3);
+            minF = minF.toString().slice(1, 3);
+            hrsF = hrsF.toString().slice(1, 3);
+            dayF = dayF.toString().slice(1, 3);
+          } else {
+            document.getElementById("clock" + i).style.color = "lightgreen";
+          }
+
+          if (hrsF.toString().length < 2) {
+            hrsF = "0" + hrsF;
+          }
+          if (minF.toString().length < 2) {
+            minF = "0" + minF;
+          }
+          if (secF.toString().length < 2) {
+            secF = "0" + secF;
+          }
+          if (dayF.toString().length < 2) {
+            dayF = "0" + dayF;
+          }
+
+          clocks[i].textContent =
+            dayF + " : " + hrsF + " : " + minF + " : " + secF;
+        }
+      }, 1000);
+    }
 
 function formatDate(date) {
-    var options = { day: 'numeric', month: 'long', year: 'numeric' };
-    const date1 = new Date(date)
-    var newDate = date1.toLocaleDateString("en-US", options)
-    return newDate;
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  const date1 = new Date(date);
+  var newDate = date1.toLocaleDateString("en-US", options);
+  return newDate;
 }
-

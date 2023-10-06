@@ -12,7 +12,9 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: var(--var-darker-blue);
+    background-image: url("../images/nightsky.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header {
@@ -26,8 +28,7 @@ header {
     color: white;
 }
 
-
-.launch_image {
+.launch_image, .article_image {
     height: 100%;
     object-fit: cover;
 }
@@ -42,27 +43,20 @@ header {
     text-align: center;
 }
 
-.launch_content--container div {
-    position: relative;
-    left: 0;
+.launch_content--container div, .article_content--container div {
     color: rgb(255, 241, 41);
     font-size: 25px;
     font-weight: 700;
 }
 
-.launch_content--container li {
+.launch_content--container li, .article_content--container li {
     font-size: 25px;
     color: var(--var-highlight);
 }
 
-.launch_content--container p {
+.launch_content--container p, .article_content--container p {
     color: var(--var-dark-alt);
 
-}
-
-a {
-    text-decoration: none;
-    color: var(--var-mid-alt)
 }
 
 .launch_list {
@@ -76,151 +70,95 @@ a {
 .launch_element {
     display: flex;
     flex-direction: row-reverse;
-    height: 500px;
-    width: 100%; 
-    background-color: var(--var-dark-blue);
-    padding: 10px;
-    margin: 10px 10px;
 }
 
-.launch_desc {
+.launch_element, .article_element {
+    height: 500px;
+    width: 600px;
+    background-color: var(--var-dark-blue);
+    padding: 10px;
+    margin: 10px;
+}
+
+.launch_desc, .article_desc {
     font-size: 18px;
     padding: 10px;
 }
 
-.launch_desc a {
+a, .launch_desc a, .article_desc a {
     color: rgb(255, 241, 41); 
-}
-
-.article_image{
-    height: 100%;
-    object-fit: cover;
 }
 
 .article_image--container {
     height: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 .article_list {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    list-style: none;
-    padding: 0;
-}
-
-.article_element {
-    height: 500px;
-    width: 100%;
-    background-color: var(--var-dark-blue);
-    padding: 10px;
-    margin: 10px 100px;
-}
-
-.article_content--container {
     text-align: center;
-}
-
-.article_content--container div {
-    color: rgb(255, 241, 41);
-    font-size: 25px;
-    font-weight: 700;
-}
-
-.article_content--container li {
-    font-size: 25px;
-    color: var(--var-highlight);
-}
-
-.article_content--container p {
-    color: var(--var-dark-alt);
 }
 
 .content_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
 }
 
-.article_desc {
-    font-size: 18px;
-    padding: 10px;
+.clock_styling {
+    font-size: 25px;
 }
 
-.article_desc a {
-    color: rgb(255, 241, 41); 
-}
-
-.left_list {
-    width: 50%;
-}
-
-.right_list {
-    width: 50%;
-}
-
-#clock {
-    color: green;
-}
-
-@media (max-width: 1000px) {
-    .content_container {
-
+@media (max-width: 1220px) {
+    .launch_element, .article_element {
+        height: 350px;
+        width: 400px;
     }
-    .launch_element {
+
+    .launch_content--container div, .article_content--container div {
+        font-size: 20px;
+    }
+
+    .launch_content--container li, .article_content--container li {
+        font-size: 15px;
+    }
+
+    .launch_desc, .article_desc {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .clock_styling {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .launch_element, .article_element {
         height: 250px;
         width: 300px;
     }
 
-    .launch_content--container div {
+    .launch_content--container div, .article_content--container div {
         font-size: 15px;
     }
 
-    .launch_content--container li {
+    .launch_content--container li, .article_content--container li {
         font-size: 12px;
     }
 
-    .launch_desc {
+    .launch_desc, .article_desc {
         font-size: 10px;
         padding: 5px;
-    }
-
-    .launch_desc a {
-        color: rgb(255, 241, 41); 
     }
 
     .article_image--container {
         height: 45%;
     }
 
-    .article_element {
-        height: 250px;
-        width: 300px;
-        padding: 10px;
-        margin: 10px;
-    }
-
-    .article_content--container div {
+    .clock_styling {
         font-size: 15px;
-    }
-
-    .article_content--container li {
-        font-size: 12px;
-    }
-
-    .article_desc {
-        font-size: 10px;
-        padding: 5px;
-    }
-    
-    .left_list {
-        width: 0%;
-    }
-    .right_list {
-        width: 0%;
     }
 }

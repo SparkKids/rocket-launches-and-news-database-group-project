@@ -1,77 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style type="text/tailwindcss">
-    @layer utilities {
-          .content-auto {
-            content-visibility: auto;
-          }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
         }
+      }
     </style>
-    <link rel="stylesheet" href="./assets/css/searchStyle.css">
+    <link rel="stylesheet" href="./assets/css/searchStyle.css" />
     <title>search results</title>
-</head>
+  </head>
 
-<body>
-  <nav
-    class="relative flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start"
-    data-te-navbar-ref>
-    <!-- Container wrapper -->
-    <div class="flex w-full flex-wrap items-center justify-between px-6">
-      <div class="flex items-center">
-        <!-- Toggle button -->
-        <button
-          class="block border-0 bg-transparent py-2 pr-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
-          type="button" data-te-collapse-init data-te-target="#navbarSupportedContentY"
-          aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="[&>svg]:w-7">
-          </span>
-        </button>
-      </div>
-
-      <!-- Collapsible wrapper -->
-      <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
-        id="navbarSupportedContentY" data-te-collapse-item>
-        <!-- Left links -->
-        <ul class="mr-auto lg:flex lg:flex-row" data-te-navbar-nav-ref>
-          <li data-te-nav-item-ref>
-            <a class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
-              href="./index.html" data-te-nav-link-ref disabled>Dashboard</a>
-          </li>
-          <li data-te-nav-item-ref>
-            <a class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
-              href="#!" data-te-nav-link-ref data-te-ripple-init data-te-ripple-color="light">Team</a>
-          </li>
-          <li class="mb-2 lg:mb-0" data-te-nav-item-ref>
-            <a class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
-              href="#!" data-te-nav-link-ref>
-            </a>
-          </li>
-        </ul>
-        <!-- Left links -->
-      </div>
-      <!-- Collapsible wrapper -->
-    </div>
-    <!-- Container wrapper -->
-  </nav>
-
-  <div class="content_container">
-    <div class="left_list">
-      <ul class="launch_list"></ul>
-    </div>
-
-        <div class="right_list">
-            <ul class="article_list"></ul>
+  <body>
+    <nav
+      class="relative flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10 lg:flex-wrap lg:justify-start"
+      data-te-navbar-ref
+    >
+      <!-- Container wrapper -->
+      <div class="flex w-full flex-wrap items-center justify-between px-6">
+        <div class="flex items-center">
+          <!-- Toggle button -->
+          <button
+            class="block border-0 bg-transparent py-2 pr-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 lg:hidden"
+            type="button"
+            data-te-collapse-init
+            data-te-target="#navbarSupportedContentY"
+            aria-controls="navbarSupportedContentY"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="[&>svg]:w-7"> </span>
+          </button>
         </div>
+
+        <!-- Collapsible wrapper -->
+        <div
+          class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+          id="navbarSupportedContentY"
+          data-te-collapse-item
+        >
+          <!-- Left links -->
+          <ul class="mr-auto lg:flex lg:flex-row" data-te-navbar-nav-ref>
+            <li data-te-nav-item-ref>
+              <a
+                class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
+                href="./index.html"
+                data-te-nav-link-ref
+                disabled
+                >Dashboard</a
+              >
+            </li>
+            <li data-te-nav-item-ref>
+              <a
+                class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
+                href="#!"
+                data-te-nav-link-ref
+                data-te-ripple-init
+                data-te-ripple-color="light"
+                >Team</a
+              >
+            </li>
+            <li class="mb-2 lg:mb-0" data-te-nav-item-ref>
+              <a
+                class="block py-2 pr-2 text-neutral-500 transition duration-150 ease-in-out hover:text-neutral-600 focus:text-neutral-600"
+                href="#!"
+                data-te-nav-link-ref
+              >
+              </a>
+            </li>
+          </ul>
+          <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+
+    <div class="content_container">
+      <div class="left_list">
+        <ul class="launch_list"></ul>
+      </div>
+
+      <div class="right_list">
+        <ul class="article_list"></ul>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/duration.js"></script>
-    <script>dayjs.extend(window.dayjs_plugin_duration)</script>
+    <script>
+      dayjs.extend(window.dayjs_plugin_duration);
+    </script>
     <script src="./assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>
