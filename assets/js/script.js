@@ -285,11 +285,6 @@ function launchesFetch() {
           img.setAttribute("alt", "Picture of the " + data.results[i].name);
         }
 
-        img.addEventListener("click", (img) => {
-          // console.log(img.target.src)
-          location.href = img.target.src;
-        });
-
         var content_container = document.createElement("div");
         content_container.classList.add("launch_content--container");
 
