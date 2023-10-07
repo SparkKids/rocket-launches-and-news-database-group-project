@@ -70,7 +70,7 @@ for (let i = 0; i < array.length; i++) {
         if (val === 'none') {
             val = ''
         }
-        var link = './search.html?t=' + type
+        var link = './search.html?t=' + type +
             '&k=' + key + '&s=' + val
 
         location.href = link
@@ -173,11 +173,19 @@ function autoComplete(e) {
             
             var menu = document.createElement('h1')
             menu.textContent = array[i].type + " " + array[i].val
+
             menu.addEventListener('click', (e) => {
+
+                var valuesArray = e.target.innerText.split(' ')
+                var val = valuesArray[1]
+                var type = valuesArray[0]
+                
+
                 if (val === 'none') {
                     val = ''
                 }
-                var link = './search.html?t=' + type
+
+                var link = './search.html?t=' + type +
                     '&k=' + key + '&s=' + val
         
                 location.href = link
