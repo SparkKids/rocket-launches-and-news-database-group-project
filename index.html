@@ -137,7 +137,7 @@
                   <!-- email -->
 
                   <select id="options" data-te-select-init
-                    class="mb-4 peer block min-h-[auto] w-half rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0">
+                    class="mb-4 peer block min-h-[auto] w-[50%] rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0">
                     <option value="0" selected disabled hidden>--select--</option>
                     <option value="upcoming">upcoming</option>
                     <option value="previous">previous</option>
@@ -149,7 +149,7 @@
                     data-te-modal-wrapper-init>
                     <input type="text"
                       class=" block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
-                      id="hiddenInput" placeholder="-ie Falcon 9 Block 5" />
+                      id="hiddenInput" placeholder="-ie Falcon, SpaceX" />
                     <label for="hiddenInput" class="relative bottom-[3.8rem] left-0 max-w-[90%] text-neutral-500">
                       Search Term: 
                     </label>
@@ -163,6 +163,9 @@
                       <input type="text"
                         class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] placeholder:opacity-100 focus:placeholder:opacity-0"
                         id="keywordInput" placeholder="start typing" onKeyup="autoComplete(this.value)"/>
+                      <span class="history-menu flex flex-col hidden bg-white absolute">
+                        <h1>test</h1>
+                      </span>
                       <label for="keywordInput" class="p-2 absolute bottom-10 left-0 max-w-[90%] text-neutral-600">
                         Previous Searches
                       </label>

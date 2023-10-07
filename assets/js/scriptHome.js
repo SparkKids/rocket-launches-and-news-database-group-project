@@ -98,7 +98,7 @@ type_list.onchange = (e) => {
 }
 
 
-// set link to retrieve later based on user input
+// MODAL: set link to retrieve later based on user input
 search_btn.addEventListener('click', () => {
     console.log(type_input)
     var typeVal = type_list.value
@@ -149,3 +149,51 @@ openModal.addEventListener('click', (e) => {
         modal.classList.add('hidden')
     }
 })
+
+
+// for loop to add keywords to search array
+var search_array = []
+for (let f = 0; f < array.length; f++) {
+    search_array.push(array[f].type)
+    search_array.push(array[f].val)
+}
+// function to print out relevant searches from past
+// based on user input
+function autoComplete(e) {
+    var menuEl = document.querySelector('.history-menu')
+
+    // clear menu first
+    menuEl.innerHTML = ''
+
+    // if the input matches any search terms in history
+    // create objects representing those searches
+    if (search_array.includes(e)) {
+        for (let i = 0; i < array.length; i++) {
+            console.log(search_array)
+            
+            var menu = document.createElement('h1')
+            menu.textContent = array[i].type + " " + array[i].val
+            menu.addEventListener('click', (e) => {
+                if (val === 'none') {
+                    val = ''
+                }
+                var link = './search.html?t=' + type
+                    '&k=' + key + '&s=' + val
+        
+                location.href = link
+            })
+            menu.href = ''
+            menuEl.append(menu)
+        }
+    }
+    // hide if empty, show if not
+    if ( e === '' ) {
+        if (menuEl.classList.contains('hidden')) {
+            menuEl.classList.remove('hidden')
+        }
+        menuEl.innerHTML = ''
+    } else {
+        menuEl.classList.remove('hidden')
+    }
+
+}
