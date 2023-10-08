@@ -1,0 +1,164 @@
+:root {
+    --var-darkest-blue: #181923;
+    --var-darker-blue: #292d41;
+    --var-dark-blue: #38405d;
+    --var-gray-blue: #4c546d;
+    --var-light-purp: #6f687a;
+    --var-dark-alt: #8b7983;
+    --var-mid-alt: #a58d89;
+    --var-highlight: #b59e90;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("../images/nightsky.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: var(--var-darkest-blue);
+    color: white;
+}
+
+.launch_image, .article_image {
+    height: 100%;
+    object-fit: cover;
+}
+
+.launch_image--container {
+    height: 100%;
+}
+
+.launch_content--container {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.launch_content--container div, .article_content--container div {
+    color: rgb(255, 241, 41);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.launch_content--container li, .article_content--container li {
+    font-size: 25px;
+    color: var(--var-highlight);
+}
+
+.launch_content--container p, .article_content--container p {
+    color: var(--var-dark-alt);
+
+}
+
+.launch_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style: none;
+    padding: 0;
+}
+
+.launch_element {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.launch_element, .article_element {
+    height: 500px;
+    width: 600px;
+    background-color: var(--var-dark-blue);
+    padding: 10px;
+    margin: 10px;
+}
+
+.launch_desc, .article_desc {
+    font-size: 18px;
+    padding: 10px;
+}
+
+a, .launch_desc a, .article_desc a {
+    color: rgb(255, 241, 41); 
+}
+
+.article_image--container {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.article_list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.content_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.clock_styling {
+    font-size: 25px;
+}
+
+@media (max-width: 1220px) {
+    .launch_element, .article_element {
+        height: 350px;
+        width: 400px;
+    }
+
+    .launch_content--container div, .article_content--container div {
+        font-size: 20px;
+    }
+
+    .launch_content--container li, .article_content--container li {
+        font-size: 15px;
+    }
+
+    .launch_desc, .article_desc {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .clock_styling {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .launch_element, .article_element {
+        height: 250px;
+        width: 300px;
+    }
+
+    .launch_content--container div, .article_content--container div {
+        font-size: 15px;
+    }
+
+    .launch_content--container li, .article_content--container li {
+        font-size: 12px;
+    }
+
+    .launch_desc, .article_desc {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .article_image--container {
+        height: 45%;
+    }
+
+    .clock_styling {
+        font-size: 15px;
+    }
+}
