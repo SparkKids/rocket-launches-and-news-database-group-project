@@ -69,7 +69,7 @@
               </div>
             </div>
           </div>
-              </div>
+        </div>
       </div>
 
       <!-- Mobile menu, show/hide based on menu state. -->
@@ -149,7 +149,7 @@
                       class=" block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
                       id="hiddenInput" placeholder="-ie Falcon, SpaceX" />
                     <label for="hiddenInput" class="relative bottom-[3.8rem] left-0 max-w-[90%] text-neutral-500">
-                      Search Term: 
+                      Search Term:
                     </label>
                   </div>
                 </div>
@@ -160,7 +160,7 @@
                     <div>
                       <input type="text"
                         class="peer block min-h-[auto] w-full rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] placeholder:opacity-100 focus:placeholder:opacity-0"
-                        id="keywordInput" placeholder="start typing" onKeyup="autoComplete(this.value)"/>
+                        id="keywordInput" placeholder="start typing" onKeyup="autoComplete(this.value)" />
                       <span class="history-menu flex flex-col hidden bg-white absolute">
                         <h1>test</h1>
                       </span>
@@ -201,12 +201,16 @@
   <div class="flex h-full justify-around flex-col py-10 pl-10 bg-[#242a3f] h-32 text-3xl">
     <span class="flex flex-row justify-between">
       <h1 class="text-white mb-10">Search History: </h1>
-      <button class="clear-btn mr-10 mb-10 py-2 px-4 rounded text-neutral-500 hover:text-white hover:bg-[#2d446c]">clear</button>
+      <button
+        class="clear-btn mr-10 mb-10 py-2 px-4 rounded text-neutral-500 hover:text-white hover:bg-[#2d446c]">clear</button>
     </span>
     <ul class="absolute flex flex-col savedSearches"></ul>
   </div>
   <footer
     class="relative bottom-0 mtp-10 h-10 flex w-full items-center justify-between bg-[#222d3f] py-2 shadow-sm shadow-neutral-700/10  lg:flex-wrap lg:justify-start">
+    <div class="flex items-center justify-between">
+      <img src="./assets/images/rocket-png-40817.png" class="h-8 mr-3" alt="Rocket Launch Info and News Logo" />
+      <span class="text-white">Rocket Launch Info and News © 2023. All Rights Reserved.</span>    </div>
   </footer>
 
   <script src="./assets/js/scriptHome.js"></script>
