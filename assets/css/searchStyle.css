@@ -12,9 +12,10 @@
 body {
     padding: 0;
     margin: 0;
-    background-image: url("../images/nightsky.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    /* background-image: url("../images/nightsky.jpg"); */
+    background-image: url('../images/seamlessStarPattern.jpg');
+    background-size: 25%;
+    background-repeat: repeat;
 }
 
 header {
