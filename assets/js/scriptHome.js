@@ -3,7 +3,7 @@ var search_specific_input = document.getElementById("hidden-option");
 var savedSearches = document.querySelector(".savedSearches");
 var search_btn = document.getElementById("search-btn");
 var type_input = document.getElementById("hiddenInput");
-var search_history_input = document.getElementById("keywordInput");
+var search_history_input = document.getElementById("limitInput");
 var clear_btn = document.querySelector(".clear-btn");
 var dismissBtn = document.getElementById("dismiss-btn");
 var modal = document.getElementById("modal");
@@ -27,8 +27,8 @@ for (let i = 0; i < array.length; i++) {
   var type = array[i].type;
   if (array[i].val) {
     var val = array[i].val;
-  } else var val = 0;
-  var key = array[i].key;
+  } else var val = '';
+  var limit = array[i].limit;
 
   var search = document.createElement("span");
   search.classList =
@@ -42,9 +42,9 @@ for (let i = 0; i < array.length; i++) {
   printVal.classList = "m-2 text-[hsl(218,81%,75%)]";
   printVal.textContent = val;
 
-  var printKey = document.createElement("h1");
-  printKey.classList = "m-2 text-[hsl(218,81%,75%)]";
-  printKey.textContent = key;
+  var printlimit = document.createElement("h1");
+  printlimit.classList = "m-2 text-[hsl(218,81%,75%)]";
+  printlimit.textContent = limit;
 
   if (!array[i].type) {
     type = "none";
@@ -54,8 +54,8 @@ for (let i = 0; i < array.length; i++) {
   if (!array[i].val) {
     val = "none";
   }
-  if (!array[i].key) {
-    key = "none";
+  if (!array[i].limit) {
+    limit = "none";
   }
 
   savedSearches.classList = "flex flex-col";
@@ -63,21 +63,21 @@ for (let i = 0; i < array.length; i++) {
   search.addEventListener("click", () => {
     var input = {
       type: type,
-      key: key,
+      limit: limit,
       val: val,
     };
 
     if (val === "none") {
       val = "";
     }
-    var link = "./search.html?t=" + type + "&k=" + key + "&s=" + val;
+    var link = "./search.html?t=" + type + "&k=" + limit + "&s=" + val;
 
     location.href = link;
   });
 
   search.append(printType);
   search.append(printVal);
-  search.append(printKey);
+  search.append(printlimit);
   savedSearches.append(search);
 }
 
@@ -101,7 +101,7 @@ type_list.onchange = (e) => {
 search_btn.addEventListener("click", () => {
   console.log(type_input);
   var typeVal = type_list.value;
-  var keywordVal = search_history_input.value;
+  var limitVal = search_history_input.value;
 
   if (type_input.value) {
     var val = type_input.value;
@@ -111,11 +111,11 @@ search_btn.addEventListener("click", () => {
     val = "";
   }
 
-  var link = "./search.html?t=" + typeVal + "&k=" + keywordVal + "&s=" + val;
+  var link = "./search.html?t=" + typeVal + "&k=" + limitVal + "&s=" + val;
 
   var input = {
     type: typeVal,
-    key: keywordVal,
+    limit: limitVal,
     val: type_input.value,
   };
 
@@ -128,7 +128,7 @@ search_btn.addEventListener("click", () => {
   location.href = link;
 });
 
-// close modal (inside modal)
+// MODAL: close (inside modal)
 dismissBtn.addEventListener("click", (e) => {
   if (modal.classList.contains("hidden")) {
     modal.classList.remove("hidden");
@@ -137,7 +137,7 @@ dismissBtn.addEventListener("click", (e) => {
   }
 });
 
-// open modal button
+// MODAL: open button
 openModal.addEventListener("click", (e) => {
   if (modal.classList.contains("hidden")) {
     modal.classList.remove("hidden");
@@ -146,7 +146,7 @@ openModal.addEventListener("click", (e) => {
   }
 });
 
-// for loop to add keywords to search array
+// for loop to add limitwords to search array
 var search_array = [];
 for (let f = 0; f < array.length; f++) {
   search_array.push(array[f].type);
@@ -162,7 +162,7 @@ function autoComplete(e) {
 
   // if the input matches any search terms in history
   // create objects representing those searches
-  if (search_array.includes(e)) {
+  if (search_array.toString().includes(e)) {
     for (let i = 0; i < array.length; i++) {
       console.log(search_array);
 
@@ -178,7 +178,7 @@ function autoComplete(e) {
           val = "";
         }
 
-        var link = "./search.html?t=" + type + "&k=" + key + "&s=" + val;
+        var link = "./search.html?t=" + type + "&k=" + limit + "&s=" + val;
 
         location.href = link;
       });

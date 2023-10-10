@@ -1,4 +1,10 @@
-var articlesURL = "https://api.spaceflightnewsapi.net/v4/articles/?limit=10";
+var href = location.href.split("=");
+console.log(href);
+var type = href[1].substring(0, href[1].length - 2);
+var specific = href[3].substring(0, href[3].length);
+var limitNum = href[2].substring(0, href[2].length - 2)
+
+var articlesURL = "https://api.spaceflightnewsapi.net/v4/articles/?limit=" + limitNum.toString();
 
 // retrieve articles from fetch
 function articlesFetch() {
@@ -10,7 +16,7 @@ function articlesFetch() {
       console.log(data);
 
       // create elements using dynamically created elements
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < limitNum; i++) {
         var container = document.createElement("div");
         container.classList.add("article_element");
 
@@ -59,30 +65,27 @@ function articlesFetch() {
 }
 
 // format url string so get the type and/or specific search values
-var href = location.href.split("=");
-console.log(href);
-var type = href[1].substring(0, href[1].length - 2);
-var specific = href[3].substring(0, href[3].length);
+
 switch (type) {
   case "upcoming":
     var launchType = "upcoming/";
     var launchesURL =
-      "https://lldev.thespacedevs.com/2.2.0/launch/" + launchType;
+      "https://lldev.thespacedevs.com/2.2.0/launch/" + launchType + '?limit=' + limitNum;
     break;
   case "previous":
     var launchType = "previous/";
     var launchesURL =
-      "https://lldev.thespacedevs.com/2.2.0/launch/" + launchType;
+      "https://lldev.thespacedevs.com/2.2.0/launch/" + launchType + '?limit=' + limitNum;
     break;
   case "specific":
     var launchSearch = specific;
     var launchesURL =
-      "https://lldev.thespacedevs.com/2.2.0/launch?search=" + launchSearch;
+      "https://lldev.thespacedevs.com/2.2.0/launch?search=" + launchSearch + '?limit=' + limitNum;
     break;
   default:
     var launchType = "";
     var launchesURL =
-      "https://lldev.thespacedevs.com/2.2.0/launch/" + launchType;
+      "https://lldev.thespacedevs.com/2.2.0/launch/" + launchType + '?limit=' + limitNum;
     break;
 }
 var keywords = href[2];
@@ -110,7 +113,7 @@ function launchesFetch() {
     .then((data) => {
       console.log(data);
 
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < limitNum; i++) {
         var container = document.createElement("div");
         container.classList.add("launch_element");
 
@@ -182,12 +185,12 @@ function launchesFetch() {
       }
       // ------------ CLOCK FUNCTION -----------
       var clocks = [];
-      for (let f = 0; f < 10; f++) {
+      for (let f = 0; f < limitNum; f++) {
         clocks.push(document.getElementById("clock" + f));
       }
       var objects = [];
 
-      for (var i = 0; i < 10; i++) {
+      for (var i = 0; i < limitNum; i++) {
         var testTime = {
           time: 0,
           secs: function () {
@@ -265,7 +268,7 @@ function launchesFetch() {
 
   var objects = [];
 
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < limitNum; i++) {
     var testTime = {
       time: 0,
       secs: function () {

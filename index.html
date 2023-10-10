@@ -196,26 +196,40 @@
                     class="relative mb-8 flex flex-row"
                     data-te-modal-wrapper-init
                   >
-                    <!-- email -->
-
-                    <select
-                      id="options"
-                      data-te-select-init
-                      class="mb-4 peer block min-h-[auto] w-[50%] rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    >
-                      <option value="0" selected disabled hidden>
-                        --select--
-                      </option>
-                      <option value="upcoming">upcoming</option>
-                      <option value="previous">previous</option>
-                      <option value="specific">specific</option>
-                    </select>
-
+                    <div class="flex flex-row w-[70%]">
+                      <!-- Type Input / Options list -->
+                      <select
+                        id="options"
+                        data-te-select-init
+                        class="mb-4 peer block min-h-[auto] w-[50%] rounded outline outline-1 border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      >
+                        <option value="0" selected disabled hidden>
+                          --select--
+                        </option>
+                        <option value="upcoming">upcoming</option>
+                        <option value="previous">previous</option>
+                        <option value="specific">specific</option>
+                      </select>
+                      <!-- limit selection for search, input -->
+                      <div class="flex flex-col-reverse">
+                        <select 
+                        id="limitInput"
+                        class="limitInput flex flex-col w-[70%] text-center px-[10px] ml-[20px] mb-4 peer min-h-[auto] rounded outline outline-1 border-0 bg-transparent py-[0.32rem] leading-[1.6] focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                        >
+                          <option value="5">5</option>
+                          <option value="10">10</option>
+                          <option value="15">15</option>
+                          <option value="20">20</option>
+                        </select>
+                        <label for="#limit" class="absolute bottom-[64px] right-[55%]">Limit:</label>
+                      </div>
+                    </div>
                     <div
                       id="hidden-option"
                       class="absolute hidden right-0 outline-1 border-0 bg-transparent px-3 leading-[1.6]"
                       data-te-modal-wrapper-init
                     >
+                      <!-- Hidden Input (Specific Selection) -->
                       <input
                         type="text"
                         class="block min-h-[auto] w-40% rounded outline outline-1 border-0 bg-transparent py-[0.18rem] px-3 focus:placeholder:opacity-0 data-[te-input-state-active]:placeholder:opacity-100"
@@ -230,10 +244,10 @@
                       </label>
                     </div>
                   </div>
-                  <!-- hidden class -->
                   <form autocomplete="off" action="./">
-                    <div class="relative mb-6" data-te-modal-init>
-                      <!-- password -->
+                    <div class="relative mb-6"
+                    data-te-modal-init>
+                      <!-- History Search Input -->
                       <div>
                         <input
                           type="text"
@@ -245,7 +259,6 @@
                         <span
                           class="history-menu flex flex-col hidden bg-white absolute"
                         >
-                          <h1>test</h1>
                         </span>
                         <label
                           for="keywordInput"
