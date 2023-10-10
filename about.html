@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./about.css">
+
+  <title>About</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+    <a class="navbar-brand" href="#">Built With Bootstrap </a>
+    <!-- Use of data attributes in nav component-->
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <img style="width:23px; height:36px" src="./assets/images/rocket-png-40817.png" alt="Rocket Launch Logo">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./team.html">Team</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Section: Design Block -->
+  <section class="background-radial-gradient overflow-hidden">
+    <style>
+      .background-radial-gradient {
+        background-color: hsl(218, 41%, 15%);
+        background-image: radial-gradient(650px circle at 0% 0%,
+            hsl(218, 41%, 35%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%),
+          radial-gradient(1250px circle at 100% 100%,
+            hsl(218, 41%, 45%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%);
+      }
+    </style>
+
+    <header>
+      <div class="container">
+        <!-- Every grid layout we create starts with an HTML element receiving a class of row -->
+        <!-- align-items-end change the alignment of flex items to end -->
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6">
+            <figure>
+              <img class='img-fluid' src="./assets/images/bill-jelen-woWf_VJ7dNs-unsplash2.jpg"
+                alt="Space X launch picture.">
+              <figcaption class="text-light">Photo by <a class="text-light"
+                  href="https://unsplash.com/@billjelen?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Bill
+                  Jelen</a> on <a class="text-light"
+                  href="https://unsplash.com/photos/woWf_VJ7dNs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+              </figcaption>
+
+
+            </figure>
+
+          </div>
+          <!-- Uses a combination of col-* values to make full-size on small devices and half-size on medium or larger devices -->
+          <div class="col-12 col-md-6">
+            <h1 class="text-light">Welcome to Rocket Launch Info and News.</h1>
+            <p class="text-light">Our team has made it easy to search for pictures, data and news on rocket launches
+              around the world.
+              Use our easy to use search features to retrieve information on rocket launches past, present and future!
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="row">
+        <div class="col-12 col-md-9">
+          <h1 class="display-2 text-center text-light">About Our Services</h1>
+          <section class="row justify-content-around">
+
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+              <div class="card">
+                <h3 class="card-header">
+                  Future Launches
+                </h3>
+                <div class="card-body">
+                  <p class="card-text">
+                    Want to find out what launches are upcoming? Click on "Start Search" from the search page and
+                    select "upcoming" from the "Select Type" drop down list box. You are presented a list of all
+                    upcoming
+                    rocket launches including, descriptions, pictures, and related news articles.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+              <div class="card">
+                <h3 class="card-header">
+                  Specific Launches
+                </h3>
+                <div class="card-body">
+                  <p class="card-text">
+                    Have a specific launch you are interested in? This is easy to do. Click on "Start Search" from the
+                    search page and
+                    select "specific" from the "Select Type" drop down list box. This displays a "Search Term" text
+                    entry box for
+                    entering your search terms. interested in learning about launches using Space X's Falcon 9 launch
+                    vehicles? Enter
+                    "Falcon 9" in the Search Term text entry box. You are then presented with a list of rocket launches
+                    that use a version
+                    of Space X's Falcon 9 launch vehicle.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+              <div class="card">
+                <h3 class="card-header">
+                  Past Launches
+                </h3>
+                <div class="card-body">
+                  <p class="card-text">
+                    Click on "Start Search" from the search page and select "previous" from the "Select Type" drop down
+                    list box.
+                    You are presented a list of previous rocket launches including, descriptions, pictures, and related
+                    news articles.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        </div>
+      </section>
+
+    </main>
+  </section>
+  <footer>
+    <section class="background-radial-gradient overflow-hidden">
+      <!-- Copyright -->
+      <div class="text-left p-4 text-light">
+        <img style="width:23px; height:36px" src="./assets/images/rocket-png-40817.png" alt="Rocket Launch Logo">
+        Rocket Launch Info and News © 2023. All Rights Reserved.
+      </div>
+      <!-- Copyright -->
+    </section>
+  </footer>
+
+</body>
+
+</html>
