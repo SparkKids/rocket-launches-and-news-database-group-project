@@ -27,8 +27,21 @@ for (let i = 0; i < array.length; i++) {
   var type = array[i].type;
   if (array[i].val) {
     var val = array[i].val;
-  } else var val = '';
+  } else var val = 'none';
   var limit = array[i].limit;
+
+  
+  if (!array[i].type) {
+    type = "none";
+  } else if (type == 0) {
+    type = "none";
+  }
+  if (!array[i].val) {
+    val = "none";
+  }
+  if (!array[i].limit) {
+    limit = "none";
+  }
 
   var search = document.createElement("span");
   search.classList =
@@ -45,18 +58,6 @@ for (let i = 0; i < array.length; i++) {
   var printlimit = document.createElement("h1");
   printlimit.classList = "m-2 text-[hsl(218,81%,75%)]";
   printlimit.textContent = limit;
-
-  if (!array[i].type) {
-    type = "none";
-  } else if (type == 0) {
-    type = "none";
-  }
-  if (!array[i].val) {
-    val = "none";
-  }
-  if (!array[i].limit) {
-    limit = "none";
-  }
 
   savedSearches.classList = "flex flex-col";
 
