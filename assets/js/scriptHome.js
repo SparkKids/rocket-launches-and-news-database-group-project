@@ -44,8 +44,7 @@ for (let i = 0; i < array.length; i++) {
   }
 
   var search = document.createElement("span");
-  search.classList =
-    "hover:cursor-pointer hover:bg-[#2d446c] p-2 rounded-md flex flex-row m-2";
+  search.classList = "hover:cursor-pointer hover:bg-[#2d446c] p-2 rounded-md flex flex-row m-2";
 
   var printType = document.createElement("h1");
   printType.classList = "m-2 text-white";
