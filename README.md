@@ -11,15 +11,15 @@ This is a web application to view current and future weather data based on city 
 
 ## Simply click the start search button to begin a new search, or use the navigation inside the search window to select a previous search.
 
-![NYT-Scraper](./assets/images/README-images/History.PNG)
+![Search-History](./assets/images/README-images/History.PNG)
 
 ## The Application includes filters including current, past, or upcoming launches; also with the most up-to-date SpaceNews.
 
-![NYT-Scraper](./assets/images/README-images/searchBox.PNG)
+![Search-Box](./assets/images/README-images/searchBox.PNG)
 
 ## There is an about page explaining the website in more detail, and one including all the authors.
 
-![NYT-Scraper](./assets/images/README-images/Team.PNG)
+![Team](./assets/images/README-images/Team.PNG)
 
 ### Future Launches:
  * Want to find out what launches are upcoming? Click on "Start Search" from the search page and select "upcoming" from the "Select Type" drop down list box. You are presented a list of all upcoming rocket launches including, descriptions, pictures, and related news articles.
