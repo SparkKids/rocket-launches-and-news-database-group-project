@@ -1,4 +1,4 @@
-# [Rocket Launches and News Database](https://scraper-nyt-react.herokuapp.com/) ☁️
+# [Rocket Launches and News Database](https://sparkkids.github.io/Team3Project1/) ☁️
 
 This is a web application to view current and future launch data and article information.
 
