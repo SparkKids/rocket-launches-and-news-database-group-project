@@ -60,18 +60,27 @@ for (let i = 0; i < array.length; i++) {
 
   savedSearches.classList = "flex flex-col";
 
-  search.addEventListener("click", () => {
-    var input = {
-      type: type,
-      limit: limit,
-      val: val,
-    };
+  search.addEventListener("click", (e) => {
+    
+    searchTerms = e.target.outerText.split('\n')
+    console.log(searchTerms)
+    var typeVal = searchTerms[0];
+
+    var val = searchTerms[1];
+
+    limitVal = searchTerms[2]
+
+    if (searchTerms[2]) {
+      var limitVal = searchTerms[2];
+    } else var val = "none";
 
     if (val === "none") {
       val = "";
     }
-    var link = "./search.html?t=" + type + "&k=" + limit + "&s=" + val;
 
+    var link = "./search.html?t=" + typeVal + "&k=" + limitVal + "&s=" + val;
+
+    console.log(link)
     location.href = link;
   });
 
@@ -164,7 +173,7 @@ function autoComplete(e) {
   // create objects representing those searches
   if (search_array.toString().includes(e)) {
     for (let i = 0; i < array.length; i++) {
-      console.log(search_array);
+      // console.log(search_array);
 
       var menu = document.createElement("h1");
       menu.textContent = array[i].type + " " + array[i].val;

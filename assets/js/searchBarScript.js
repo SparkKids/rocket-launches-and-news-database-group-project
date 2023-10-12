@@ -4,7 +4,9 @@ var infoParsed = JSON.parse(info)
 var type;
 var limit;
 var val;
-var pop = infoParsed.pop()
+setTimeout(() => {
+    if (info && !document.querySelector('.launch_element')) {
+        var pop = infoParsed.pop()
         type = pop.type
         limit = pop.limit
         val = pop.val
@@ -12,17 +14,7 @@ var pop = infoParsed.pop()
         var link = "./search.html?t=" + type + "&k=" + limit + "&s=" + val;
     
         location.href = link;
-// setTimeout(() => {
-//     if (info && !document.querySelector('.launch_element')) {
-//         var pop = infoParsed.pop()
-//         type = pop.type
-//         limit = pop.limit
-//         val = pop.val
-    
-//         var link = "./search.html?t=" + type + "&k=" + limit + "&s=" + val;
-    
-//         location.href = link;
-//     }
-// }, 1000)
+    }
+}, 1000)
 
 

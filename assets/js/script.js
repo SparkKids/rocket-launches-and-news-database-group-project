@@ -3,6 +3,9 @@ console.log(href);
 var type = href[1].substring(0, href[1].length - 2);
 var specific = href[3].substring(0, href[3].length);
 var limitNum = href[2].substring(0, href[2].length - 2)
+console.log(limitNum)
+console.log(specific)
+console.log(type)
 
 var articlesURL = "https://api.spaceflightnewsapi.net/v4/articles/?limit=" + limitNum.toString();
 
@@ -13,7 +16,7 @@ function articlesFetch() {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
 
       // create elements using dynamically created elements
       for (let i = 0; i < limitNum; i++) {
@@ -65,7 +68,6 @@ function articlesFetch() {
 }
 
 // format url string so get the type and/or specific search values
-
 switch (type) {
   case "upcoming":
     var launchType = "upcoming/";
@@ -80,7 +82,7 @@ switch (type) {
   case "specific":
     var launchSearch = specific;
     var launchesURL =
-      "https://lldev.thespacedevs.com/2.2.0/launch?search=" + launchSearch + '?limit=' + limitNum;
+      "https://lldev.thespacedevs.com/2.2.0/launch?search=" + launchSearch + '&limit=' + limitNum;
     break;
   default:
     var launchType = "";
@@ -88,7 +90,6 @@ switch (type) {
       "https://lldev.thespacedevs.com/2.2.0/launch/" + launchType + '?limit=' + limitNum;
     break;
 }
-var keywords = href[2];
 
 articlesFetch();
 launchesFetch();
@@ -111,7 +112,7 @@ function launchesFetch() {
       }
     })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
 
       for (let i = 0; i < limitNum; i++) {
         var container = document.createElement("div");
@@ -260,13 +261,8 @@ function launchesFetch() {
             dayF + " : " + hrsF + " : " + minF + " : " + secF;
         }
       }, 1000);
-    });
 
-  // for (let f = 0; f < 10; f++) {
-  //   clocks.push(document.getElementById("clock" + f));
-  // }
-
-  var objects = [];
+      var objects = [];
 
   for (var i = 0; i < limitNum; i++) {
     var testTime = {
@@ -288,7 +284,7 @@ function launchesFetch() {
     var currentDate = dayjs();
     var newDate = dayjs(formatDate(date));
     var d = newDate.diff(currentDate);
-    console.log(d);
+    // console.log(d);
     if (d < 0) {
     }
 
@@ -332,8 +328,13 @@ function launchesFetch() {
 
       clocks[i].textContent = dayF + " : " + hrsF + " : " + minF + " : " + secF;
     }
-  }, 1000);
-}
+  }, 1000)
+
+  // for (let f = 0; f < 10; f++) {
+  //   clocks.push(document.getElementById("clock" + f));
+  // }
+
+  
 
 function formatDate(date) {
   var options = { day: "numeric", month: "long", year: "numeric" };
@@ -341,3 +342,4 @@ function formatDate(date) {
   var newDate = date1.toLocaleDateString("en-US", options);
   return newDate;
 }
+    })}
