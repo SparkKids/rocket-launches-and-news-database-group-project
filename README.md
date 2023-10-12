@@ -1,6 +1,6 @@
 # [Rocket Launches and News Database](https://scraper-nyt-react.herokuapp.com/) ☁️
 
-This is a web application to view current and future weather data based on city selected
+This is a web application to view current and future launch data and article information.
 
 ![Homepage](./assets/images/README-images/Capture.PNG)
 
