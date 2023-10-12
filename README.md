@@ -1,4 +1,4 @@
-# [Rocket Launches and News Database](https://sparkkids.github.io/Team3Project1/) ☁️
+# [Rocket Launches and News Database](https://github.com/SparkKids/rocket-launches-and-news-database-group-project) ☁️
 
 This is a web application to view current and future launch data and article information.
 
@@ -6,7 +6,7 @@ This is a web application to view current and future launch data and article inf
 
 ## Getting Started 🌱
 
-[Application on Github Pages](https://sparkkids.github.io/Team3Project1/)
+[Application on Github Pages](https://sparkkids.github.io/rocket-launches-and-news-database-group-project/)
 
 ## Welcome to Rocket Launch, info and news. On the homepage you will find a simple UI.
 
