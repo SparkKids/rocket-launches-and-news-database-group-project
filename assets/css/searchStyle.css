@@ -30,7 +30,7 @@ header {
 }
 
 .launch_image, .article_image {
-    height: 100%;
+    height: 95%;
     object-fit: cover;
 }
 
@@ -130,6 +130,7 @@ a, .launch_desc a, .article_desc a {
         font-size: 14px;
         padding: 5px;
     }
+    
 
     .clock_styling {
         font-size: 20px;
